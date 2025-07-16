@@ -1,0 +1,53 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
+
+body{
+    position: absolute;
+    top: 3rem;
+    font-family: winky rough;
+
+}
+/* navbar */
+nav{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    height: 2.5rem;
+
+}
+#bars{
+    position: fixed;
+    left: 1.5%;
+    font-size: 1.5rem;
+}
+#user{
+    position: fixed;
+    right: 1.5%;
+    font-size: 1.5rem;
+}
+nav input{
+    border: 0;
+    padding-left: 1rem;
+}
+
+.searchbar{
+    border: .3rex solid black;
+    border-radius: 2rex;
+    padding: .2rem;
+    position: fixed;
+    left: 30%;
+    width: 40%;
+}
+.searchbar i{
+    position: absolute;
+    right: 1rem;
+    align-self: center;
+}
+nav h1{
+    position: fixed;
+    left: 15%;
+}
