@@ -1,12 +1,28 @@
 
- body{
-    background-image: url("https://www.freepik.com/free-photo/cup-coffee-with-headphones-notebook-dark-background_289908520.htm#fromView=search&page=1&position=40&uuid=af2afa0c-940f-4a3f-a5eb-90f1ad995819&query=books+coffee+glasses++");
-    background-repeat: no-repeat;
+body{
+    background-image: url("images/cup-coffee-with-headphones-notebook-dark-background.jpg");
+    background-color: rgb(3, 3, 3, 0.5);
     background-size: cover;
-    background-position: 100% 28%;
-    
-    /* background-clip: padding-box; 
-    /* background-attachment: fixed; */
+}
 
- }
+div{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translate(-1%, -50%);
+    text-align: center;
+    border: solid;
+    border-color: white;
+}
 
+h1{
+    color: #800000;
+    font-size: 9em;
+    border: solid;
+    border-color: white;
+}
+
+p{
+    border: solid;
+    border-color: white;
+}
