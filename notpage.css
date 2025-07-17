@@ -1,0 +1,22 @@
+
+.writing-page{
+    position:relative;
+    border: solid;
+    border-color: black;
+    height: 45em;
+    width: 66em;
+    left: 24em;
+    top: 6em;
+    
+}
+
+.side-bar{
+    position: relative;
+    border: solid;
+    border-color: black;
+    height: 5em;
+    width: 20em;
+    top: 6em;
+    float: left;
+    height: 35em;
+}
