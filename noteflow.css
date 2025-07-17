@@ -24,5 +24,7 @@ h1{
 
 p{
     border: solid;
+    font-size: 2em;
+    color: white;
     border-color: white;
 }
