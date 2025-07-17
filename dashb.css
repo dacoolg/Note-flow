@@ -26,28 +26,73 @@ nav{
 }
 #user{
     position: fixed;
-    right: 1.5%;
+    right: 4%;
     font-size: 1.5rem;
 }
-nav input{
-    border: 0;
-    padding-left: 1rem;
-}
 
-.searchbar{
-    border: .3rex solid black;
-    border-radius: 2rex;
-    padding: .2rem;
-    position: fixed;
-    left: 30%;
-    width: 40%;
-}
-.searchbar i{
-    position: absolute;
-    right: 1rem;
-    align-self: center;
-}
 nav h1{
     position: fixed;
     left: 15%;
+}
+.form{
+    --inputTextColor: #fff;
+    --inputBgColor: #adadad;
+    --focusInputBgColor: transparent;
+    --textColor: black;
+    --activeColor: #dedede;
+    --inputWidth: 2rem;
+    --inlinePaddingOfInput: .5rem;
+    --gap: .9rem;
+}
+.form{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    position: absolute;
+    height: 2em;
+    left: 30%;
+}
+.searchbg{
+    position: absolute;
+    width: 100%;
+    inset: 0;
+    background: var(--inputBgColor);
+    border-radius: .5rem;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    box-shadow: rgba(4, 4, 4, 0.404) 0 1px 4px;
+}
+
+.form label{
+    width: 100%;
+    padding: .8em;
+    height: 100%;
+    padding-inline: var(--inlinePaddingOfInput);
+    display: flex;
+    align-items: center;
+}
+.searchicon{
+    position: absolute;
+    left: var(--inlinePaddingOfInput);
+}
+.searchicon i{
+    font-size: 1.2em;
+    color: var(--textColor);
+}
+.input{
+    border: none;
+    width: 100%;
+    background: none;
+    margin-inline: 2em;
+}
+.input:focus{
+    outline: none;
+}
+.input:focus ~ .searchbg{
+    border: 1px solid var(--activeColor);
+    background-color: var(--inputTextColor);
+}
+.input:focus ~ .searchicon i{
+    color: var(--activeColor);
 }
