@@ -1,22 +1,84 @@
 
+/* the writing page */
 .writing-page{
     position:relative;
     border: solid;
     border-color: black;
     height: 45em;
-    width: 66em;
+    width: 45em;
     left: 24em;
     top: 6em;
     
 }
 
+/* the side bar */
 .side-bar{
     position: relative;
     border: solid;
     border-color: black;
-    height: 5em;
-    width: 20em;
-    top: 6em;
-    float: left;
     height: 35em;
+    width: 20em;
+    top: 7em;
+    float: left; 
+}
+
+/* menu icon */
+#bars{
+    position: fixed;
+    left: 1.5%;
+    font-size: 1.5rem;
+}
+
+/* the nave bar */
+.navbar{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 20%;
+    background-color: #dddddd;
+    z-index: 1;   
+}
+
+/* the log out link */
+#logOut{
+   position: absolute;
+   top: 43.5em;
+   width: 100%;
+}
+
+li a {
+    display: block;
+    text-decoration: none;
+    font-size: 1.3em;
+    color: #000;
+    padding: 0.5em 1em;
+    padding-left: 1.4em;
+}
+
+/* the home page */
+#active {
+    background-color: #04AA6D;
+    color: white;    
+}
+
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+/* the icons */
+#settings{
+    position: relative;
+    top: 32px;
+    left: 0.4em;
+}
+
+#faqs{
+    position: relative;
+    top: 7.7em;
+    left: -0.9em;
 }
