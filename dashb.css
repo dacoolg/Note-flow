@@ -2,10 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
 
 body{
-    position: absolute;
+    position: relative;
     top: 3rem;
     font-family: sans-serif;
-
+    box-sizing: content-box;
+    width: 100%;
+    margin-inline: 0;
 }
 /* navbar */
 nav{
@@ -26,7 +28,7 @@ nav{
 }
 #user{
     position: fixed;
-    right: 4%;
+    right: 1.5cap;
     font-size: 1.5rem;
 }
 
@@ -73,6 +75,7 @@ nav h1{
     display: flex;
     align-items: center;
 }
+/* search box */
 .searchicon{
     position: absolute;
     left: var(--gap);
@@ -119,3 +122,31 @@ nav h1{
   transform: scale(1);
   transition: 0s;
 }
+/* new note */
+.new-note{
+    width: calc(100% - 5rem);
+    border-bottom: .3em solid black;
+    position: relative;
+    left: 2.5rem;
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+}
+.new-note i{
+    font-size: 8em;
+    align-self: center;
+}
+/* recent notes */
+.recent{
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+}
+#face{
+    width: 10rem;
+    height: 10rem;
+}
+
