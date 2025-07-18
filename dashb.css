@@ -2,10 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
 
 body{
-    position: absolute;
+    position: relative;
     top: 3rem;
-    font-family: winky rough;
-
+    font-family: sans-serif;
+    box-sizing: content-box;
+    width: 100%;
+    margin-inline: 0;
 }
 /* navbar */
 nav{
@@ -26,7 +28,7 @@ nav{
 }
 #user{
     position: fixed;
-    right: 4%;
+    right: 1.5cap;
     font-size: 1.5rem;
 }
 
@@ -34,6 +36,7 @@ nav h1{
     position: fixed;
     left: 15%;
 }
+/* search bar */
 .form{
     --inputTextColor: #fff;
     --inputBgColor: #adadad;
@@ -41,16 +44,16 @@ nav h1{
     --textColor: black;
     --activeColor: #dedede;
     --inputWidth: 2rem;
-    --inlinePaddingOfInput: .5rem;
+    --inlinePaddingOfInput: 1rem;
     --gap: .9rem;
 }
 .form{
     display: flex;
     align-items: center;
     width: 50%;
-    position: absolute;
+    position: relative;
     height: 2em;
-    left: 30%;
+    left: 5%;
 }
 .searchbg{
     position: absolute;
@@ -72,14 +75,31 @@ nav h1{
     display: flex;
     align-items: center;
 }
+/* search box */
 .searchicon{
     position: absolute;
-    left: var(--inlinePaddingOfInput);
+    left: var(--gap);
 }
 .searchicon i{
     font-size: 1.2em;
     color: var(--textColor);
 }
+.close-btn {
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    color: black;
+    position: absolute;
+    right: calc(var(--inlinePaddingOfInput) - var(--gap) + .4em);
+    box-sizing: border-box;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0);
+    transition: .5s;
+}
+
 .input{
     border: none;
     width: 100%;
@@ -96,3 +116,37 @@ nav h1{
 .input:focus ~ .searchicon i{
     color: var(--activeColor);
 }
+.form input:valid ~ .close-btn {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition: 0s;
+}
+/* new note */
+.new-note{
+    width: calc(100% - 5rem);
+    border-bottom: .3em solid black;
+    position: relative;
+    left: 2.5rem;
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+}
+.new-note i{
+    font-size: 8em;
+    align-self: center;
+}
+/* recent notes */
+.recent{
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+}
+#face{
+    width: 10rem;
+    height: 10rem;
+}
+
