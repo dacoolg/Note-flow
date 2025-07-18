@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
 
 body{
     background-image: url("images/cup-coffee-with-headphones-notebook-dark-background.jpg");
@@ -5,26 +6,72 @@ body{
     background-size: cover;
 }
 
-div{
-    position: absolute;
+.background-container{
+    position: relative;
     width: 100%;
-    top: 50%;
-    transform: translate(-1%, -50%);
+    top: 4em;
+    /* transform: translate(-1%, -50%); */
     text-align: center;
-    border: solid;
-    border-color: white;
+
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.6);
 }
 
 h1{
-    color: #800000;
-    font-size: 9em;
+    position: relative;
+    width: 70%;
+    left: 1.1em;
+    top: -0.5em;
+    color: white;
+    text-shadow: 5px 5px 10px black;
+    font-size: 13em;
+    font-family: winky rough;
+    
+}
+
+p{
+    position: relative;
+    width: 50%;
+    left: 11em;
+    top: -8em;  
+    font-size: 2em;
+    color: white;
+    text-shadow: 2px 2px 5px black;
+    font-family: sans-serif;
+}
+
+a{
+    position: relative;
+    left: -2.5em;
+    top: -13em;
+    margin: 2em;
+    padding: 1em;
+    border-radius: 1em;
+    text-decoration: none;
+    color: white;
+    font-family: winky rough;
+    letter-spacing: 0.2em;
     border: solid;
     border-color: white;
 }
 
-p{
+a:hover{
+    position: relative;
+    left: -2.5em;
+    top: -13em;
+    margin: 2em;
+    padding: 1em;
+    border-radius: 1em;
+    text-decoration: none;
+    color: red;
+    background-color: white;
     border: solid;
-    font-size: 2em;
-    color: white;
     border-color: white;
 }
