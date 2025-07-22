@@ -1,0 +1,77 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
+
+body{
+    display: grid;
+    font-family: sans-serif;
+    grid-template-columns: 200px 1fr 1fr;
+    grid-template-rows: 3rem 1fr 3rem;
+    grid-template-areas: 
+        "header header header"
+        "nav main main"
+        "nav footer footer"
+    ;
+}
+
+header{
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -1.5rem;
+}
+.nav-icon{
+    font-family: winky rough;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 6rem;
+}
+.nav-icon button{
+    border: none;
+    background: transparent;
+    font-size: 1.7rem;
+}
+.form{
+    background: rgb(208, 208, 208);
+    height: 1.6rem;
+    border-radius: 30px;
+    width: 15rem;
+    padding-left: .66rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.input{
+    border: none;
+    background: none;
+}
+.input:focus{
+    outline: none;
+}
+.search-cancel{
+    border: none;
+    background: none;
+    position: absolute;
+    right: .5rem;
+}
+.profile{
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+}
+
+nav{
+    grid-area: nav;
+}
+
+main{
+    grid-area: main;
+}
+
+footer{
+    grid-area: footer;
+}
+
+
+
