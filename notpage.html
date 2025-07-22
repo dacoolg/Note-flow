@@ -17,7 +17,43 @@
         <a href="#" class="toggleBox">
             <span class="icon"></span>
         </a>
+        <ul class="navItems">
+            <li>
+                <a href="#">
+                    <i class="fa fa-home" style="--i:1"></i>
+                    <span style="--g:1">home</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-user" style="--i:2"></i>
+                    <span style="--g:2">user</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-question" style="--i:3"></i>
+                    <span style="--g:3">FAQs</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-arrow-right-from-bracket" style="--i:4"></i>
+                    <span style="--g:4">log out</span>
+                </a>
+            </li>
+            
+        </ul>
     </div>
+
+    <script>
+        var toggleClick = document.querySelector(".toggleBox");
+        var container = document.querySelector(".container")
+        toggleClick.addEventListener('click', ()=>{
+            toggleClick.classList.toggle("active");
+            container.classList.toggle("active"); 
+        })
+    </script>
                
 </body>
 </html>
