@@ -19,7 +19,9 @@ nav{
     left: 0;
     align-items: center;
     height: 2.5rem;
-
+    background: transparent;
+    backdrop-filter: blur(30px);
+    z-index: 100;
 }
 #bars{
     position: fixed;
@@ -143,10 +145,36 @@ nav h1{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 3rem;
+    margin-top: .5rem;
 }
+.recent h2{
+    color: #676767;
+    position: absolute;
+    top: 0;
+}
+
 #face{
     width: 10rem;
     height: 10rem;
+}
+
+.nothing{
+    display: none;  /*Set displat to none if there are no items, otherwise flex */
+    align-items: center;
+    flex-direction: column;
+    margin-top: 4rem;
+}
+.card{
+    background: #8f8f8f;
+    width: 20rem;
+    height: 10rem;
+}
+.card-container{
+    margin: 5rem 8rem;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: .5rem;
 }
 
