@@ -4,13 +4,15 @@
 body{
     display: grid;
     font-family: sans-serif;
-    grid-template-columns: 200px 1fr 1fr;
-    grid-template-rows: 3rem 1fr 3rem;
+    grid-template-columns: 20vw 1fr 1fr;
+    grid-template-rows: 2.5rem 1fr 3rem;
     grid-template-areas: 
         "header header header"
         "nav main main"
         "nav footer footer"
     ;
+    height: 100vh;
+    margin-inline: 0;
 }
 
 header{
@@ -19,6 +21,16 @@ header{
     justify-content: space-between;
     align-items: center;
     margin-top: -1.5rem;
+    position: fixed;
+    width: 100%;
+    top: 20px;
+    left: 0;
+    height: 50px;
+    padding: 0 10px;
+    border: 1px solid black;
+    box-shadow: rgba(57, 57, 57, 0.34) 2px 3px 5px;
+    background: rgba(255, 255, 255, 0.559);
+    backdrop-filter: blur(30px);
 }
 .nav-icon{
     font-family: winky rough;
@@ -32,12 +44,11 @@ header{
     background: transparent;
     font-size: 1.7rem;
 }
-.form{
-    background: rgb(208, 208, 208);
-    height: 1.6rem;
-    border-radius: 30px;
+.form label{
+    background: none;
+    height: 1.8rem;
     width: 15rem;
-    padding-left: .66rem;
+    padding-inline: .5rem;
     display: flex;
     align-items: center;
     position: relative;
@@ -45,26 +56,64 @@ header{
 .input{
     border: none;
     background: none;
+    font-size: 1em;
+    margin-left: .5em;
+}
+.search-bg{
+    width: 100%;
+    height: 100%;
+    background-color: #b2b0b0;
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    border-radius: 30px;
+}
+.input:focus ~ .search-bg{
+   background-color: transparent;
+   border: 1px solid black;
 }
 .input:focus{
     outline: none;
+    color: #000;
 }
 .search-cancel{
     border: none;
     background: none;
     position: absolute;
     right: .5rem;
+    opacity: 0;
+    transition: .2s ease;
+}
+.input:valid ~ .search-cancel{
+    opacity: 1;
 }
 .profile{
     border: none;
     background: none;
     font-size: 1.5rem;
+    margin-right: 25px;
 }
 
 nav{
     grid-area: nav;
-}
+    border-right: 1px solid black;
 
+}
+nav{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+.menu-item{
+    padding: 10px 20px;
+}
+a{
+    text-decoration: none;
+    color: #313131;
+}
+#logout{
+    margin-top: auto;
+}
 main{
     grid-area: main;
 }

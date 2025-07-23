@@ -3,7 +3,7 @@
 <head>
     <!-- icon import -->
     <script src="https://kit.fontawesome.com/483be17929.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="dashgrid.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NF-Dashboard</title>
@@ -20,6 +20,7 @@
             <label for="search">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input required="text" class="input" type="text" placeholder="Searh notes">
+                <div class="search-bg" id="searchbg"></div>
                 <button type="reset" class="search-cancel">
                     <i class="fa-solid fa-x"></i>
                 </button>
@@ -33,7 +34,22 @@
     </header>
 
     <nav>
-
+        <div class="menu-item">
+            <i class="fa-solid fa-house"></i>
+            <a href="">Home</a>
+        </div>
+        <div class="menu-item">
+            <i class="fa-solid fa-user"></i>
+            <a href="">Create</a>
+        </div>
+        <div class="menu-item">
+            <i class="fa-solid fa-question"></i>
+            <a href="">FAQ</a>
+        </div>
+        <div class="menu-item" id="logout">
+            <i class="fa-solid fa-right-to-bracket"></i>
+            <a href="">Logout</a>
+        </div>
     </nav>
         
     <main>
