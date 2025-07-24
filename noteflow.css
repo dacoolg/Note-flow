@@ -30,7 +30,40 @@ body{
     height: 100%;
     width: 100%;
     object-fit: cover;
+    clip-path: circle(0% at 0% 100%);
+    transition: all 0.7s;
 }
+
+#one:checked ~ .img-1 img{
+    clip-path: circle(150% at 0% 100%);
+}
+
+#two:checked ~ .img-1 img,
+#two:checked ~ .img-2 img{
+    clip-path: circle(150% at 0% 100%);
+}
+
+#three:checked ~ .img-1 img,
+#three:checked ~ .img-2 img,
+#three:checked ~ .img-3 img{
+    clip-path: circle(150% at 0% 100%);
+}
+
+#four:checked ~ .img-1 img,
+#four:checked ~ .img-2 img,
+#four:checked ~ .img-3 img,
+#four:checked ~ .img-4 img{
+    clip-path: circle(150% at 0% 100%);
+}
+
+#five:checked ~ .img-1 img,
+#five:checked ~ .img-2 img,
+#five:checked ~ .img-3 img,
+#five:checked ~ .img-4 img,
+#five:checked ~ .img-5 img{
+    clip-path: circle(150% at 0% 100%);
+}
+
 
 .wrapper .sliders{
     position: absolute;
@@ -44,5 +77,27 @@ body{
 .wrapper .sliders label{
     height: 13px;
     width: 35px;
-    border: 2px solid red;
+    border: 2px solid rgb(142,197,252);
+    margin: 0 3px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+#one:checked ~ .sliders label.one,
+#two:checked ~ .sliders label.two,
+#three:checked ~ .sliders label.three,
+#four:checked ~ .sliders label.four,
+#five:checked ~ .sliders label.five{
+    width: 13px;
+    border-radius: 14px;
+    background: rgb(142,197,252);
+}
+
+.sliders label:hover{
+    background: rgb(142,197,252);
+}
+
+.wrapper input[type="radio"] {
+    display: none;
 }
