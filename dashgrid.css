@@ -4,7 +4,7 @@
 body{
     display: grid;
     font-family: sans-serif;
-    grid-template-columns: 20vw 1fr 1fr;
+    grid-template-columns: 120px 1fr 1fr;
     grid-template-rows: 2.5rem 1fr 3rem;
     grid-template-areas: 
         "header header header"
@@ -92,24 +92,46 @@ header{
     background: none;
     font-size: 1.5rem;
     margin-right: 25px;
+    cursor: pointer;
+    transition: .3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
+.profile:hover{
+    transform: scale(1.4);
+}
+.nav-btn{
+    cursor: pointer;
+    transition: .25s ease;
+}
+.nav-btn:hover{
+    transform: scale(1.2);
+}
+
 
 nav{
     grid-area: nav;
     border-right: 1px solid black;
-
-}
-nav{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     padding: 10px 0;
 }
 .menu-item{
     padding: 10px 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    cursor:pointer;
+    transition: .1s ease;
+}
+.menu-item:hover{
+    background: linear-gradient(20deg, #000, #444444, #232323);
+    color:white;
+    > a{ color: white; }
 }
 a{
     text-decoration: none;
     color: #313131;
+    font-size: .9em;
 }
 #logout{
     margin-top: auto;
