@@ -16,8 +16,8 @@ body{
 
 .wrapper{
     position: relative;
-    height: 400px;
-    width: 700px;
+    height: 600px;
+    width: 900px;
 }
 
 .wrapper .img{
@@ -100,16 +100,4 @@ body{
 
 .wrapper input[type="radio"] {
     display: none;
-}
-
-.wrapper .o{
-   position: relative; 
-   background-color: #000;
-   bottom: 0px;
-   left: 650px;
-   transform: translate(100%);
-   transform: scale(4);
-   width: 100px;
-   height: 100px;
-   z-index: 999;
 }
