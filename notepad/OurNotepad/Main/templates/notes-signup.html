@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Signup to noteflow</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if form.errors %}
+            <p style="color: red;">{{ form.errors }}</p>
+        {% endif %}
+        <button type="submit">Signup</button>
+    </form>
+    <a href="http://127.0.0.1:8000/">
+        <button>BACK</button>
+    </a>
+{% endblock %}

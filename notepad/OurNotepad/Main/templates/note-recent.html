@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+    <a href="http://127.0.0.1:8000/create-note/">
+        <button>ADD NOTE</button>
+    </a>
+    <br>
+    <a href="{% url 'account' %}">
+        <button>MY ACCOUNT</button>
+    </a>
+    <br>
+<div class="grid">
+        {% for note in notes %}
+            <a href="{% url 'note-detail' note.slug %}" style="text-decoration: none; color: black;">
+                <div style="color: rgb(0, 0, 165);">{{ note.title }} </div>
+            </a>
+            <div>{{ note.snippet }}</div>
+            <div style="color: rgb(61, 61, 163);">created {{ note.created_at }}</div>
+            <br>
+        {% empty %}
+            <p>NO NOTES ADDED YET</p>
+        {% endfor %}
+    </div>
+
+    <a href="http://127.0.0.1:8000/">
+        <button>BACK</button>
+    </a>
+{% endblock %}

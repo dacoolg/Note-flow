@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Login to NoteFlow</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if form.errors %}
+            <p style="color: red;">Invalid username or password.</p>
+        {% endif %}
+        <button type="submit">Login</button>
+    </form>
+    <p>dont have an account <a href="{% url 'signup' %}">Signup</a></p>
+{% endblock %}
+
