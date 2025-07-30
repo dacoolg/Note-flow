@@ -9,15 +9,16 @@
 body{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     min-height: 100vh;
     background: linear-gradient(136deg, #E0FFFF 0%, #2F4F4F 100%);
 }
 
 .wrapper{
-    position: relative;
-    height: 600px;
-    width: 900px;
+    position: absolute;
+    height: 100%;
+    width: 80%;
+    border-radius: 20px;
 }
 
 .wrapper .img{
@@ -100,4 +101,10 @@ body{
 
 .wrapper input[type="radio"] {
     display: none;
+}
+
+a{
+    position: fixed;
+    z-index: 999;
+    right: 5em;
 }

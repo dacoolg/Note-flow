@@ -1,17 +1,49 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
+    <link rel="stylesheet" href="{% static 'noteflow.css' %}">
 </head>
 <body>
+    <div class="wrapper">
+        <input type="radio" name="slide" id="one" checked>
+        <input type="radio" name="slide" id="two">
+        <input type="radio" name="slide" id="three">
+        <input type="radio" name="slide" id="four">
+        <input type="radio" name="slide" id="five">
+        <div class="img img-1">
+            <img src="{% static 'images/img img-1.jpg'%}" alt="">
+        </div>
+        <div class="img img-2">
+            <img src="{% static 'images/img img-2.jpg'%}" alt="">
+        </div>
+        <div class="img img-3">
+            <img src="{% static 'images/img img-3.jpg'%}" alt="">
+        </div>
+        <div class="img img-4">
+            <img src="{% static 'images/img img-4.jpg'%}" alt="">
+        </div>
+        <div class="img img-5">
+            <img src="{% static 'images/img img-5.jpg'%}" alt="">
+        </div>
+        <div class="sliders">
+            <label for="one" class="one"></label>
+            <label for="two" class="two"></label>
+            <label for="three" class="three"></label>
+            <label for="four" class="four"></label>
+            <label for="five" class="five"></label>
+        </div>
+        
+        
 
-    <h2>NEVER LOSE A BRILLIANT IDEA AGAIN</h2>
+    </div>
     
     <a href="http://127.0.0.1:8000/recent-notes/">
-        <button>GET STARTED</button>
-    </a>  
+            <button>GET STARTED</button>
+    </a>
 
 </body>
 </html>
