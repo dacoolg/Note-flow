@@ -37,6 +37,33 @@
             <label for="five" class="five"></label>
         </div>
         
+        <script>
+            let counter = 0;
+            const totalSlides = 5;
+            let interval;
+
+            const startSlider = () => {
+                interval = setInterval(() => {
+                    counter++;
+                    document.getElementById(['one', 'two', 'three', 'four', 'five'][counter % totalSlides]).checked = true;
+                }, 5000);
+            };
+
+            const stopSlider = () => {
+                clearInterval(interval);
+            };
+
+            // starts slider when the page loads 
+            startSlider();
+
+            // pause on hover
+            const slider = document.querySelector('.wrapper');
+
+            slider.addEventListener('mouseenter', stopSlider);
+            slider.addEventListener('mouseleave', startSlider);
+
+
+        </script>
         
 
     </div>
