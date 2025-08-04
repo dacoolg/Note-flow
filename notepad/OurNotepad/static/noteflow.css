@@ -11,6 +11,7 @@ body{
     align-items: center;
     justify-content: space-between;
     min-height: 100vh;
+    overflow: hidden;
     background: linear-gradient(136deg, #E0FFFF 0%, #2F4F4F 100%);
 }
 
@@ -25,6 +26,9 @@ body{
     position: absolute;
     height: 100%;
     width: 100%;
+    clip-path: path("M 343 625 L 3430 625 C 3430 625 3773 625 3773 500 L 3773 125 C 3773 125 3773 0 4116 0 L 14406 0 C 14406 0 14749 0 14749 125 V 4125 C 14749 4125 14749 4250 14406 4250 L 11319 4250 C 11319 4250 10976 4250 10976 4375 V 4750 C 10976 4750 10976 4875 10633 4875 H 343 C 343 4875 0 4875 0 4750 V 750 C 0 675 147 625 343 625 Z");
+    /* clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%); */
+
 }
 
 .wrapper .img img{
