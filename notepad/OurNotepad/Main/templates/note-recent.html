@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="nav-icon">
-            <button class="nav-btn">
+            <button class="nav-btn" onclick="menuToggle()">
                 <i class="fa-solid fa-bars"></i>
             </button>
             <h1>NF</h1>
@@ -33,7 +33,7 @@
         </div>
     </header>
 
-    <nav>
+    <nav id="nav-menu">
         <div class="menu-item">
             <i class="fa-solid fa-house"></i>
             <a href="">Home</a>
@@ -43,13 +43,16 @@
             <a href="">Create</a>
         </div>
         <div class="menu-item">
-            <i class="fa-solid fa-question"></i>
+            <i class="fa-regular fa-circle-question"></i>
             <a href="">FAQ</a>
         </div>
         <div class="menu-item" id="logout">
             <i class="fa-solid fa-right-to-bracket"></i>
             <a href="">Logout</a>
         </div>
+        <button class="close-nav" onclick="menuToggle()">
+            <i class="fa-solid fa-x"></i>
+        </button>
     </nav>
         
     <main>
@@ -88,5 +91,16 @@
             <i class="fa-solid fa-file-circle-plus" class="create-icon"></i>
         </div>
     </main>
+
+    <script>
+        function menuToggle(){
+            let menu = document.getElementById("nav-menu")
+            if (menu.style.left === "-200px"){
+                menu.style.left = 0
+            } else {
+                menu.style.left = "-200px"
+            }
+        }
+    </script>
 </body>
 </html>
