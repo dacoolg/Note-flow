@@ -103,44 +103,29 @@ header{
     border-right: 1px solid black;
     display: flex;
     position: fixed;
-    top: -30px;
+    top: 0px;
     left: -200px;
-    height: 100vh;
+    height: 100%;
     flex-direction: column;
     width: 200px;
-    margin: 30px 0;
-    padding: 10px 10px;
-    padding-top: 25px;
-    background: rgba(255, 255, 255, 0);
-    backdrop-filter: blur(30px);
+    padding-bottom:5px;
+    background: rgb(255, 255, 255);
     z-index: 101;
     transition: .3s;
     box-sizing: border-box;
 }
-.close-nav{
-    position: absolute;
-    right: 5px;
-    top: 5px;
-    width: 20px;
-    padding: 0;
-    margin: 0;
-    font-size: 15px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    transition: .2s;
-}
-.close-nav:hover{
-    transform: scale(1.2);
-    font-weight: bold;
-}
+
 .menu-item{
     padding: 10px 20px;
+    margin: 0;
     display: flex;
     flex-wrap: nowrap;
     gap: 30px;
     cursor:pointer;
     transition: .1s ease;
+    text-decoration: none;
+    color: #313131;
+    font-size: .9em;
 }
 .menu-item i{
     width: 30px;
@@ -150,14 +135,7 @@ header{
     color:white;
     > a{ color: white; }
 }
-a{
-    text-decoration: none;
-    color: #313131;
-    font-size: .9em;
-}
-#logout{
-    margin-top: auto;
-}
+
 main{
     margin-top: 30px;
     box-sizing: content-box;

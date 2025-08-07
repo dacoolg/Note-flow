@@ -9,6 +9,7 @@
     <title>Dashboard</title>
 </head>
 <body>
+<!-- navbar -->
     <header>
         <div class="nav-icon">
             <button class="nav-btn" onclick="menuToggle()">
@@ -28,33 +29,18 @@
         </form>
         <div class="account">
             <button class="profile">
-                <i class="fa-solid fa-circle-user" id="user"></i>
+                <a href="{% url 'account' %}"><i class="fa-solid fa-circle-user" id="user"></i></a> 
             </button>
         </div>
     </header>
-
+<!-- sidebar -->
     <nav id="nav-menu">
-        <div class="menu-item">
-            <i class="fa-solid fa-house"></i>
-            <a href="">Home</a>
-        </div>
-        <div class="menu-item">
-            <i class="fa-solid fa-user"></i>
-            <a href="">Create</a>
-        </div>
-        <div class="menu-item">
-            <i class="fa-regular fa-circle-question"></i>
-            <a href="">FAQ</a>
-        </div>
-        <div class="menu-item" id="logout">
-            <i class="fa-solid fa-right-to-bracket"></i>
-            <a href="">Logout</a>
-        </div>
-        <button class="close-nav" onclick="menuToggle()">
-            <i class="fa-solid fa-x"></i>
-        </button>
+        <a href="" class="menu-item"><i class="fa-solid fa-house"></i>Home</a>
+        <a href="{% url 'create-note' %}" class="menu-item"><i class="fa-solid fa-user"></i>Create</a>
+        <a href="" class="menu-item"><i class="fa-regular fa-circle-question"></i>FAQ</a>
+        <a href="" class="menu-item" style="margin-top: auto;"><i class="fa-solid fa-right-to-bracket"></i>Logout</a>
     </nav>
-        
+<!-- recent notes -->
     <main>
         <h3 class="recent-title">RECENT NOTES</h3>
         <div class="recent-notes">
@@ -90,17 +76,34 @@
         <div class="create">
             <i class="fa-solid fa-file-circle-plus" class="create-icon"></i>
         </div>
-    </main>
 
+        <div class="grid">
+            {% for note in notes %}
+                <a href="{% url 'note-detail' note.slug %}" style="text-decoration: none; color: black;">
+                    <div style="color: rgb(0, 0, 165);">{{ note.title }} </div>
+                </a>
+                <div>{{ note.snippet }}</div>
+                <div style="color: rgb(61, 61, 163);">created {{ note.created_at }}</div>
+                <br>
+            {% empty %}
+                <p>NO NOTES ADDED YET</p>
+            {% endfor %}
+        </div>
+    </main>
+<!-- collapse sidebar -->
     <script>
+        const menu = document.getElementById("nav-menu")
+        menuBtn = document.querySelector(".nav-btn")
         function menuToggle(){
-            let menu = document.getElementById("nav-menu")
-            if (menu.style.left === "-200px"){
-                menu.style.left = 0
-            } else {
-                menu.style.left = "-200px"
-            }
+            let currentState = window.getComputedStyle(menu).left
+            menu.style.left = (currentState === "-200px") ? "0px" : "-200px";
         }
+        document.addEventListener("click", (event) => {
+            let currentState = window.getComputedStyle(menu).left
+            if (!menu.contains(event.target) && currentState === "0px"){
+                menuToggle()
+            }
+        })
     </script>
 </body>
 </html>
