@@ -145,35 +145,7 @@ main{
 main h3{
     text-align: center;
 }
-.recent-title{
-    color:  #606060;
-}
-.recent-notes{
-    display: grid;
-    grid-template-columns: repeat(auto-fill,200px);
-    gap: 20px;
-    justify-content: center;
-    width: 100%;
-}
-.notes{
-    border: 2px solid #272525;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    box-shadow: #b9b9b992 0 5px 7px;
-    border-radius: 20px;
-    transition: .2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
-}
-.notes:hover{
-    box-shadow: #3f3f3f92 0 5px 7px;
-    transform: scale(1.1);
-}
-.preview{
-    width: 90%;
-    border-bottom: 1px solid black;
-    text-align: center;
-    height: 100px;
-}
+
 .create{
     position: fixed;
     bottom: 20px;

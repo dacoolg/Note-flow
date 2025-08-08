@@ -43,52 +43,16 @@
 <!-- recent notes -->
     <main>
         <h3 class="recent-title">RECENT NOTES</h3>
-        <div class="recent-notes">
-            <div class="notes">
-                <div class="preview"><h2>Preview</h2></div>
-                <div class="note-title"><h4>Title</h4></div>
-            </div>
-            <div class="notes">
-                <div class="preview"><h2>Preview</h2></div>
-                <div class="note-title"><h4>Title</h4></div>
-            </div>
-            <div class="notes">
-                <div class="preview"><h2>Preview</h2></div>
-                <div class="note-title"><h4>Title</h4></div>
-            </div>
-            <div class="notes">
-                <div class="preview"><h2>Preview</h2></div>
-                <div class="note-title"><h4>Title</h4></div>
-            </div>
-            <div class="notes">
-                <div class="preview"><h2>Preview</h2></div>
-                <div class="note-title"><h4>Title</h4></div>
-            </div>
-            <div class="notes">
-                <div class="preview"><h2>Preview</h2></div>
-                <div class="note-title"><h4>Title</h4></div>
-            </div>
-            <div class="notes">
-                <div class="preview"><h2>Preview</h2></div>
-                <div class="note-title"><h4>Title</h4></div>
-            </div>
-        </div>
-        <div class="create">
-            <i class="fa-solid fa-file-circle-plus" class="create-icon"></i>
-        </div>
-
-        <div class="grid">
-            {% for note in notes %}
-                <a href="{% url 'note-detail' note.slug %}" style="text-decoration: none; color: black;">
-                    <div style="color: rgb(0, 0, 165);">{{ note.title }} </div>
-                </a>
-                <div>{{ note.snippet }}</div>
-                <div style="color: rgb(61, 61, 163);">created {{ note.created_at }}</div>
-                <br>
-            {% empty %}
-                <p>NO NOTES ADDED YET</p>
-            {% endfor %}
-        </div>
+        {% for note in notes %}
+            <a href="{% url 'note-detail' note.slug %}" style="text-decoration: none; color: black;">
+                <div style="color: rgb(0, 0, 165);">{{ note.title }} </div>
+            </a>
+            <div>{{ note.snippet }}</div>
+            <div style="color: rgb(61, 61, 163);">created {{ note.created_at }}</div>
+            <br>
+        {% empty %}
+            <p>NO NOTES ADDED YET</p>
+        {% endfor %}
     </main>
 <!-- collapse sidebar -->
     <script>
