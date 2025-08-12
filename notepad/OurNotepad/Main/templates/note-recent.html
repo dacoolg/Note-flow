@@ -27,76 +27,44 @@
                 </button>
             </label>
         </form>
-        <div class="account">
             <button class="profile">
                 <a href="{% url 'account' %}"><i class="fa-solid fa-circle-user" id="user"></i></a> 
             </button>
-        </div>
     </header>
 <!-- sidebar -->
     <nav id="nav-menu">
         <a href="" class="menu-item"><i class="fa-solid fa-house"></i>Home</a>
         <a href="{% url 'create-note' %}" class="menu-item"><i class="fa-solid fa-user"></i>Create</a>
         <a href="" class="menu-item"><i class="fa-regular fa-circle-question"></i>FAQ</a>
-        <a href="" class="menu-item" style="margin-top: auto;"><i class="fa-solid fa-right-to-bracket"></i>Logout</a>
+        <a href="{% url 'logout' %}" class="menu-item" style="margin-top: auto;"><i class="fa-solid fa-right-to-bracket"></i>Logout</a>
     </nav>
 <!-- recent notes -->
+    <h3>Recent Notes</h3>
     <main>
-        <h3 class="recent-title">RECENT NOTES</h3>
-        <div class="recent-notes">
-            <div class="notes">
-                <div class="preview"><h2>Preview</h2></div>
-                <div class="note-title"><h4>Title</h4></div>
-            </div>
-            <div class="notes">
-                <div class="preview"><h2>Preview</h2></div>
-                <div class="note-title"><h4>Title</h4></div>
-            </div>
-            <div class="notes">
-                <div class="preview"><h2>Preview</h2></div>
-                <div class="note-title"><h4>Title</h4></div>
-            </div>
-            <div class="notes">
-                <div class="preview"><h2>Preview</h2></div>
-                <div class="note-title"><h4>Title</h4></div>
-            </div>
-            <div class="notes">
-                <div class="preview"><h2>Preview</h2></div>
-                <div class="note-title"><h4>Title</h4></div>
-            </div>
-            <div class="notes">
-                <div class="preview"><h2>Preview</h2></div>
-                <div class="note-title"><h4>Title</h4></div>
-            </div>
-            <div class="notes">
-                <div class="preview"><h2>Preview</h2></div>
-                <div class="note-title"><h4>Title</h4></div>
-            </div>
-        </div>
-        <div class="create">
-            <i class="fa-solid fa-file-circle-plus" class="create-icon"></i>
-        </div>
-
-        <div class="grid">
-            {% for note in notes %}
-                <a href="{% url 'note-detail' note.slug %}" style="text-decoration: none; color: black;">
-                    <div style="color: rgb(0, 0, 165);">{{ note.title }} </div>
-                </a>
-                <div>{{ note.snippet }}</div>
+        
+        {% for note in notes %}
+            <a href="{% url 'note-detail' note.slug %}" class="note">
+                <div style="color: rgb(0, 0, 165);">{{ note.title }} </div>
+                <div class="snippet">{{ note.snippet }}</div>   
                 <div style="color: rgb(61, 61, 163);">created {{ note.created_at }}</div>
-                <br>
-            {% empty %}
-                <p>NO NOTES ADDED YET</p>
-            {% endfor %}
-        </div>
+            </a>
+        {% empty %}
+            <p>NO NOTES ADDED YET</p>
+        {% endfor %}        
     </main>
-<!-- collapse sidebar -->
+
+    <a href="{% url 'create-note' %}" class="create">
+        <i class="fa-solid fa-file-circle-plus" class="create-icon"></i>
+    </a>
+
+    <!-- collapse sidebar -->
     <script>
         const menu = document.getElementById("nav-menu")
         menuBtn = document.querySelector(".nav-btn")
         function menuToggle(){
             let currentState = window.getComputedStyle(menu).left
             menu.style.left = (currentState === "-200px") ? "0px" : "-200px";
+            menu.style.boxShadow = (currentState === "-200px") ? "0px 0px 10px black" : "0px 0px 0px black"
         }
         document.addEventListener("click", (event) => {
             let currentState = window.getComputedStyle(menu).left
