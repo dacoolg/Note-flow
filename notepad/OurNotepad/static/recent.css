@@ -141,9 +141,10 @@ header{
     color:white;
     > a{ color: white; }
 }
-
+.main{
+    margin-top: 50px;
+}
 main{
-    margin-top: -240px;
     box-sizing: content-box;
     width: 100%;
     display: grid;
@@ -151,10 +152,9 @@ main{
     justify-content: center;
     gap: 20px;
 }
-h3{
+.main p{
     text-align: center;
     color: #000;
-    margin-top: 70px;
 }
 .note{
     border: 1px solid black;
