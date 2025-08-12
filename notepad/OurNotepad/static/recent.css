@@ -145,6 +145,7 @@ header{
 main{
     margin-top: -240px;
     box-sizing: content-box;
+<<<<<<< HEAD
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, 200px);
@@ -165,6 +166,15 @@ h3{
 
 
 
+=======
+    width: 1fr;
+    padding-bottom: 20px;
+}
+main h3{
+    text-align: center;
+}
+
+>>>>>>> d791901bddf11dc070ef25f6a245a4cb30a15cc3
 .create{
     position: fixed;
     bottom: 20px;
