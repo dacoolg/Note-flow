@@ -1,10 +1,10 @@
 /* font */
 @import url('https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
 
 
 body{
-    display: grid;
     font-family: poppins;
     height: 100vh;
     margin: 0;
@@ -142,7 +142,7 @@ header{
     > a{ color: white; }
 }
 .main{
-    margin-top: 50px;
+    margin-top: 60px;
 }
 main{
     box-sizing: content-box;
@@ -155,12 +155,44 @@ main{
 .main p{
     text-align: center;
     color: #000;
+    font-size: 20px;
+    font-weight: 500;
 }
-.note{
-    border: 1px solid black;
+.note {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 160px;
+    padding: 2px 10px;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 2px solid #000;
+    transition: .2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+.note:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 5px #000;
+}
+.title{
+    font-size: 30px;
+    padding: 5px;
+}
+.snippet{
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: start;
+    padding-inline-start: 8px;
+}
+.date{
+    margin-top: auto;
+    font-size: 15px;
+    font-family: rubik;
+    width: 100%;
+    color: #313131;
+    text-align: end;
 }
 
 .create{
