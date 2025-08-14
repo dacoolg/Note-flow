@@ -38,10 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Main',
-<<<<<<< HEAD
-    # 'livereload'
-=======
->>>>>>> a042f04bc4a8a8e452b6f1b6137bfde8bb07197f
 ]
 
 MIDDLEWARE = [
@@ -52,10 +48,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-<<<<<<< HEAD
-    # 'livereload.middleware.LiveReloadScript',
-=======
->>>>>>> a042f04bc4a8a8e452b6f1b6137bfde8bb07197f
 ]
 
 ROOT_URLCONF = 'OurNotepad.urls'
