@@ -1,12 +1,13 @@
 from django.contrib.auth.decorators import login_required
 from .models import Note
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import NoteForm
+from .forms import NoteForm, SearchForm
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth import login
 from django.contrib.auth import logout
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
+from django.db import IntegrityError
 # Create your views here.
 
 def HomePage(request):
@@ -18,17 +19,28 @@ def HomePage(request):
 @login_required(login_url='login')
 def NotesList(request):
     notes = Note.objects.filter(owner=request.user).order_by('-created_at')
-    return render(request, 'note-recent.html', {'notes': notes})
+    if request.method == 'POST':
+        form = SearchForm(request.POST)
+        if form.is_valid():
+            query = form.cleaned_data['query']
+            notes = Note.objects.filter(owner=request.user, title__icontains=query) | \
+                    Note.objects.filter(owner=request.user, content__icontains=query)
+    else:
+        form = SearchForm()
+    return render(request, 'note-recent.html', {'notes': notes, 'form': form})
 
 @login_required(login_url='login')
 def CreateNote(request):
     if request.method == 'POST':
         form = NoteForm(request.POST)
         if form.is_valid():
-            note = form.save(commit=False)
-            note.owner = request.user
-            note.save()
-            return redirect('recent-notes')
+            try:
+                note = form.save(commit=False)
+                note.owner = request.user
+                note.save()
+                return redirect('recent-notes')
+            except IntegrityError:
+                form.add_error(None, "A note with this title already exists. Please use a different title.")
     else:
         form = NoteForm()
     return render(request, 'notes-create.html', {'form': form})
