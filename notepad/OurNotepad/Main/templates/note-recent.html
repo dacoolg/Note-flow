@@ -17,19 +17,34 @@
             </button>
             <h1>NF</h1>
         </div>
-        <form class="form">
+        <!-- <form class="form">
             <label for="search">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input required="text" class="input" type="text" placeholder="Searh notes">
+                <input required="text" class="input" type="text" placeholder="Search notes">
                 <div class="search-bg" id="searchbg"></div>
                 <button type="reset" class="search-cancel">
                     <i class="fa-solid fa-x"></i>
                 </button>
             </label>
+        </form> -->
+        <form method="post" action="" class="form">
+            {% csrf_token %}
+            <label for="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input required name="query" class="input" type="text" placeholder="Search notes" id="search">
+                <div class="search-bg" id="searchbg"></div>
+                <button type="submit" class="search-cancel">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+                <button type="reset" class="search-cancel">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </label>
+
         </form>
-            <button class="profile">
-                <a href="{% url 'account' %}"><i class="fa-solid fa-circle-user" id="user"></i></a> 
-            </button>
+        <button class="profile">
+            <a href="{% url 'account' %}"><i class="fa-solid fa-circle-user" id="user"></i></a> 
+        </button>
     </header>
 <!-- sidebar -->
     <nav id="nav-menu">
