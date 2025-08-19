@@ -8,65 +8,64 @@
     <link rel="stylesheet" href="{% static 'noteflow.css' %}">
 </head>
 <body>
-    <!-- <div class="wrapper">
-        <input type="radio" name="slide" id="one" checked>
-        <input type="radio" name="slide" id="two">
-        <input type="radio" name="slide" id="three">
-        <input type="radio" name="slide" id="four">
-        <input type="radio" name="slide" id="five">
-        <div class="img img-1">
-            <img src="{% static 'images/img img-1.jpg'%}" alt="">
+    <header>
+        <h1>NF</h1>
+        <div class="header-links">
+            <a href="#">Home</a>
+            <a href="#">About us</a>
+            <a href="#">Blog</a>
         </div>
-        <div class="img img-2">
-            <img src="{% static 'images/img img-2.jpg'%}" alt="">
+        <a href="#" class="login">Login/Sign Up</a>
+    </header>
+    <div class="intro">
+        <h2>Never Lose A Brilliant Idea Again</h2>
+        <p>Your Story deseverse to be written</p>
+        <a href="#">Begin Your Journey Today</a>
+    </div>
+    <div class="extra-info">
+        <div class="row">
+            <div class="text"></div>
+                <strong>Seamless Writting</strong>
+                <br>
+               <p>"Focus on your words, not the tools." Distraction-free editor with autosave so your ideas are always safe.</p>
+            </div>
+            <img src="" alt="">
         </div>
-        <div class="img img-3">
-            <img src="{% static 'images/img img-3.jpg'%}" alt="">
+
+        <div class="row">
+            <div class="text"></div>
+                <img src="" alt="">
+                <strong>Organised Chapters</strong>
+                <br>
+               <p>"Structure your story with ease." Create, rearrange, and edit chapters in one place.</p>
+            </div>
         </div>
-        <div class="img img-4">
-            <img src="{% static 'images/img img-4.jpg'%}" alt="">
+
+        <div class="row">
+            <div class="text"></div>
+                <strong>Cloud Sync</strong>
+                <br>
+               <p>"Your stories, everywhere." Access your work from any device without missing a beat.</p>
+            </div>
+            <img src="" alt="">
         </div>
-        <div class="img img-5">
-            <img src="{% static 'images/img img-5.jpg'%}" alt="">
+    </div>
+
+    <div class="extra-links">
+        <div class="about">
+            <h4>About Noteflow</h4>
+            <p> From your first spark of inspiration to your finished masterpiece, we make sure nothing gets in the way of your flow.</p>
         </div>
-        <div class="sliders">
-            <label for="one" class="one"></label>
-            <label for="two" class="two"></label>
-            <label for="three" class="three"></label>
-            <label for="four" class="four"></label>
-            <label for="five" class="five"></label>
+        <div class="more-info">
+            <a href="#">About</a>
+            <a href="#">Pricing</a>
+            <a href="#">Contact</a>
         </div>
-        
-        <script>
-            let counter = 0;
-            const totalSlides = 5;
-            let interval;
-
-            const startSlider = () => {
-                interval = setInterval(() => {
-                    counter++;
-                    document.getElementById(['one', 'two', 'three', 'four', 'five'][counter % totalSlides]).checked = true;
-                }, 5000);
-            };
-
-            const stopSlider = () => {
-                clearInterval(interval);
-            };
-
-            // starts slider when the page loads 
-            startSlider();
-
-            // pause on hover
-            const slider = document.querySelector('.wrapper');
-
-            slider.addEventListener('mouseenter', stopSlider);
-            slider.addEventListener('mouseleave', startSlider);
-
-
-        </script>
-        
-
-    </div> -->
-
+        <div class="support">
+            <a href="#">FAQ</a>
+            <a href="#">Blog</a>
+            <a href="#">Tutorial</a>
+        </div>
+    </div>
 </body>
 </html>
