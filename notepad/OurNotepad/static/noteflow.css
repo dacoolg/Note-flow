@@ -1,14 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Itim&family=Rubik:ital,wght@0,300..900;1,300..900&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
 
-*{
-    font-family: itim;
-}
-
 :root{
-    --margin-inline: 5vw;
+    --margin-inline: 10vw;
     --main-color: black;
     --title-color: #222;
     --link-color: #2a3139;
+    --strong-color: #212f42;
     --title-size: 20px;
     --paragraph-size: 15px;
     --link-size: 12px;
@@ -18,28 +15,96 @@
 }
 
 body{
-    margin-inline: var(--margin-inline);
-    margin-top: var(--header-height);
-}
-a{
-    color: var(--link-color);
-    font-size: var(--paragraph-size);
-    text-decoration: none;
+    margin: 0;
+    font-family: itim;
 }
 
+
 header{
-    width: calc(100% - calc(var(--margin-inline) * 2));
+    width: calc(100% - 40px);
     position: fixed;
-    left: var(--margin-inline);  
+    left: 0;  
     top: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: var(--header-height);
-    border-bottom: 1px solid black;
+    background: #202020;
+    padding-inline: 20px;
 }
 header div{
     display: flex;
-    gap: 20px;
+    gap: 25px;
+}
+header a{
+    color: #ffffff;
+    font-size: var(--paragraph-size);
+    text-decoration: none;
 }
 
+.intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: radial-gradient(#202020 ,#222222);
+    height: 90vh;
+}
+h2{
+    font-size: 60px;
+    color: var(--title-color);
+    text-align: center;
+    width: 100%;
+    color: #fff;
+}
+.intro p{
+    margin-top: -10px;
+    color: #fff;
+}
+.intro a{
+    background: #ffffff;
+    padding: var(--padding);
+    border-radius: 40px;
+    color: var(--link-color);
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.extra-info{
+    margin-inline: var(--margin-inline);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+    padding: var(--padding);
+    gap: 90px;
+}
+.row{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+    width: 100%;
+    height: 200px;
+}
+.text{
+    width: 60%;
+    padding: var(--padding);
+}
+.row img{
+    width: 40%;
+    background-color: #202020;
+}
+
+.extra-links{
+    display: flex;
+    gap: 50px;
+    margin: 100px var(--margin-inline) 0 var(--margin-inline);
+}
+.extra-links a{
+    color: var(--link-color);
+    text-decoration: none;
+}
+.extra-links div{
+    width: 38.5%;
+}
