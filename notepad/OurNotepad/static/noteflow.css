@@ -27,7 +27,7 @@ body{
     position: absolute;
     height: 100%;
     width: 100%;
-    clip-path: ellipse(500px 200px at 50% 50% );
+    /* clip-path: ellipse(500px 200px at 50% 50% ); */
     /* clip-path: path("M 400,60400 V 60800 H 1600 V 60400 C 1200 60800 800 60000 400 60400 Z"); */
     /* clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%); */
 
