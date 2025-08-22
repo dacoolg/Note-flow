@@ -15,25 +15,30 @@
             <button class="nav-btn" onclick="menuToggle()">
                 <i class="fa-solid fa-bars"></i>
             </button>
-            <h1>NF</h1>
+            <a href="{% url 'recent-notes' %}"><h1>NF</h1></a>
         </div>
-        <form class="form">
+        <form method="post" action="" class="form">
+            {% csrf_token %}
             <label for="search">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input required="text" class="input" type="text" placeholder="Searh notes">
+                <input required name="query" class="input" type="text" placeholder="Search notes" id="search">
                 <div class="search-bg" id="searchbg"></div>
+                <button type="submit" class="search-cancel">
+                    <i class="fa-solid fa-x"></i>
+                </button>
                 <button type="reset" class="search-cancel">
                     <i class="fa-solid fa-x"></i>
                 </button>
             </label>
+
         </form>
-            <button class="profile">
-                <a href="{% url 'account' %}"><i class="fa-solid fa-circle-user" id="user"></i></a> 
-            </button>
+        <button class="profile">
+            <a href="{% url 'account' %}"><i class="fa-solid fa-circle-user" id="user"></i></a> 
+        </button>
     </header>
 <!-- sidebar -->
     <nav id="nav-menu">
-        <a href="" class="menu-item"><i class="fa-solid fa-house"></i>Home</a>
+        <a href="{% url 'recent-notes' %}" class="menu-item"><i class="fa-solid fa-house"></i>Home</a>
         <a href="{% url 'create-note' %}" class="menu-item"><i class="fa-solid fa-user"></i>Create</a>
         <a href="" class="menu-item"><i class="fa-regular fa-circle-question"></i>FAQ</a>
         <a href="{% url 'logout' %}" class="menu-item" style="margin-top: auto;"><i class="fa-solid fa-right-to-bracket"></i>Logout</a>
