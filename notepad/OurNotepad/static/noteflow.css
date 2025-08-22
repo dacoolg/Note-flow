@@ -70,9 +70,17 @@ header a {
   background-color: #000000;
   padding: var(--padding);
   border-radius: 30px;
+  transition: .2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
+.intro-text a:hover{
+  background: radial-gradient(circle, #ffffff 10%,#bebecd 90%);
+  color: #000;
+  text-decoration: none;
+  transform: scale(1.1);
+}
+
 .intro-text p {
-  margin-top: -50px;
+  margin-top: -5%;
 }
 
 .swiper {
@@ -86,7 +94,7 @@ header a {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 9;
 }
 
