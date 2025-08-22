@@ -1,72 +1,136 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
     <title>NoteFlow</title>
-    <link rel="stylesheet" href="{% static 'noteflow.css' %}">
-</head>
-<body>
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'noteflow.css' %}" />
+  </head>
+  <body>
     <header>
-        <h1 style="color: #fff;">NF</h1>
-        <div>
-            <a href="#">Home</a>
-            <a href="#">About us</a>
-            <a href="#">Blog</a>
-        </div>
-        <a href="#" class="login">Login/Sign Up</a>
+      <h1 style="color: #fff">NF</h1>
+      <div>
+        <a href="#">Home</a>
+        <a href="#">About us</a>
+        <a href="#">Blog</a>
+      </div>
+      <a href="#" class="login">Login/Sign Up</a>
     </header>
 
-    <div class="intro">
-        <h2>Never Lose A <br> Brilliant Idea Again</h2>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="" alt="" />
+        </div>
+      </div>
+      <div class="intro-text">
+        <h2>
+          Never Lose A <br />
+          Brilliant Idea Again
+        </h2>
         <p>Your Story deseverse to be written</p>
         <a href="#">Begin Your Journey Today</a>
+      </div>
     </div>
 
     <div class="extra-info">
-        <div class="row">
-            <div class="text">
-                <strong>Seamless Writting</strong>
-                <br>
-               <p>"Focus on your words, not the tools." Distraction-free editor with autosave so your ideas are always safe.</p>
-            </div>
-            <img src="" alt="">
+      <div class="row">
+        <div class="text">
+          <strong>Seamless Writting</strong>
+          <br />
+          <p>
+            "Focus on your words, not the tools." Distraction-free editor with
+            autosave so your ideas are always safe.
+          </p>
         </div>
-        <div class="row">
-            <img src="" alt="">
-            <div class="text">
-                <strong>Organised Chapters</strong>
-                <br>
-               <p>"Structure your story with ease." Create, rearrange, and edit chapters in one place.</p>
-            </div>
+        <img src="" alt="" />
+      </div>
+      <div class="row">
+        <img src="" alt="" />
+        <div class="text">
+          <strong>Organised Chapters</strong>
+          <br />
+          <p>
+            "Structure your story with ease." Create, rearrange, and edit
+            chapters in one place.
+          </p>
         </div>
+      </div>
 
-        <div class="row">
-            <div class="text">
-                <strong>Cloud Sync</strong>
-                <br>
-               <p>"Your stories, everywhere." Access your work from any device without missing a beat.</p>
-            </div>
-            <img src="" alt="">
+      <div class="row">
+        <div class="text">
+          <strong>Cloud Sync</strong>
+          <br />
+          <p>
+            "Your stories, everywhere." Access your work from any device without
+            missing a beat.
+          </p>
         </div>
+        <img src="" alt="" />
+      </div>
     </div>
 
     <div class="extra-links">
-        <div class="about">
-            <h4>About Noteflow</h4>
-            <p> From your first spark of inspiration to your finished masterpiece, we make sure nothing gets in the way of your flow.</p>
-        </div>
-        <div class="more-info">
-            <a href="#">About</a>
-            <a href="#">Pricing</a>
-            <a href="#">Contact</a>
-        </div>
-        <div class="support">
-            <a href="#">FAQ</a>
-            <a href="#">Blog</a>
-            <a href="#">Tutorial</a>
-        </div>
+      <div>
+        <h4>About Noteflow</h4>
+        <p>
+          From your first spark of inspiration to your finished masterpiece, we
+          make sure nothing gets in the way of your flow.
+        </p>
+      </div>
+      <div>
+        <h4>More info</h4>
+        <a href="#">About</a>
+        <a href="#">Pricing</a>
+        <a href="#">Contact</a>
+      </div>
+      <div>
+        <h4>Support & resources</h4>
+        <a href="#">FAQ</a>
+        <a href="#">Blog</a>
+        <a href="#">Tutorial</a>
+      </div>
     </div>
-</body>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        autoplay: {
+          delay: 2500,
+          clickable: true,
+        },
+      });
+    </script>
+  </body>
 </html>
