@@ -1,76 +1,136 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-    <link rel="stylesheet" href="{% static 'noteflow.css' %}">
-</head>
-<body>
-    <div class="wrapper">
-        <input type="radio" name="slide" id="one" checked>
-        <input type="radio" name="slide" id="two">
-        <input type="radio" name="slide" id="three">
-        <input type="radio" name="slide" id="four">
-        <input type="radio" name="slide" id="five">
-        <div class="img img-1">
-            <img src="{% static 'images/img img-1.jpg'%}" alt="">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <title>NoteFlow</title>
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'noteflow.css' %}" />
+  </head>
+  <body>
+    <header>
+      <h1 style="color: #fff">NF</h1>
+      <div>
+        <a href="#">Home</a>
+        <a href="#">About us</a>
+        <a href="#">Blog</a>
+      </div>
+      <a href="#" class="login">Login/Sign Up</a>
+    </header>
+
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="{% static 'images/img img-1.jpg' %}" alt="" />
         </div>
-        <div class="img img-2">
-            <img src="{% static 'images/img img-2.jpg'%}" alt="">
+        <div class="swiper-slide">
+          <img src="{% static 'images/img img-2.jpg' %}" alt="" />
         </div>
-        <div class="img img-3">
-            <img src="{% static 'images/img img-3.jpg'%}" alt="">
+        <div class="swiper-slide">
+          <img src="{% static 'images/img img-3.jpg' %}" alt="" />
         </div>
-        <div class="img img-4">
-            <img src="{% static 'images/img img-4.jpg'%}" alt="">
+        <div class="swiper-slide">
+          <img src="{% static 'images/img img-4.jpg' %}" alt="" />
         </div>
-        <div class="img img-5">
-            <img src="{% static 'images/img img-5.jpg'%}" alt="">
+        <div class="swiper-slide">
+          <img src="{% static 'images/img img-5.jpg' %}" alt="" />
         </div>
-        <div class="sliders">
-            <label for="one" class="one"></label>
-            <label for="two" class="two"></label>
-            <label for="three" class="three"></label>
-            <label for="four" class="four"></label>
-            <label for="five" class="five"></label>
-        </div>
-        
-        <script>
-            let counter = 0;
-            const totalSlides = 5;
-            let interval;
-
-            const startSlider = () => {
-                interval = setInterval(() => {
-                    counter++;
-                    document.getElementById(['one', 'two', 'three', 'four', 'five'][counter % totalSlides]).checked = true;
-                }, 5000);
-            };
-
-            const stopSlider = () => {
-                clearInterval(interval);
-            };
-
-            // starts slider when the page loads 
-            startSlider();
-
-            // pause on hover
-            const slider = document.querySelector('.wrapper');
-
-            slider.addEventListener('mouseenter', stopSlider);
-            slider.addEventListener('mouseleave', startSlider);
-
-
-        </script>
-        
-
+      </div>
+      <div class="intro-text">
+        <h2>
+          Never Lose A <br />
+          Brilliant Idea Again
+        </h2>
+        <p>Your Story deseverse to be written</p>
+        <a href="#">Begin Your Journey Today</a>
+      </div>
     </div>
-    
-    <a href="http://127.0.0.1:8000/recent-notes/">
-            <button>GET STARTED</button>
-    </a>
 
-</body>
+    <div class="extra-info">
+      <div class="row">
+        <div class="text">
+          <strong>Seamless Writting</strong>
+          <br />
+          <p>
+            "Focus on your words, not the tools." Distraction-free editor with
+            autosave so your ideas are always safe.
+          </p>
+        </div>
+        <img src="" alt="" />
+      </div>
+      <div class="row">
+        <img src="" alt="" />
+        <div class="text">
+          <strong>Organised Chapters</strong>
+          <br />
+          <p>
+            "Structure your story with ease." Create, rearrange, and edit
+            chapters in one place.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="text">
+          <strong>Cloud Sync</strong>
+          <br />
+          <p>
+            "Your stories, everywhere." Access your work from any device without
+            missing a beat.
+          </p>
+        </div>
+        <img src="" alt="" />
+      </div>
+    </div>
+
+    <div class="extra-links">
+      <div>
+        <h4>About Noteflow</h4>
+        <p>
+          From your first spark of inspiration to your finished masterpiece, we
+          make sure nothing gets in the way of your flow.
+        </p>
+      </div>
+      <div>
+        <h4>More info</h4>
+        <a href="#">About</a>
+        <a href="#">Pricing</a>
+        <a href="#">Contact</a>
+      </div>
+      <div>
+        <h4>Support & resources</h4>
+        <a href="#">FAQ</a>
+        <a href="#">Blog</a>
+        <a href="#">Tutorial</a>
+      </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        autoplay: {
+          delay: 2500,
+          clickable: true,
+        },
+      });
+    </script>
+  </body>
 </html>
