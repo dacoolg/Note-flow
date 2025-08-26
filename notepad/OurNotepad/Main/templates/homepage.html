@@ -15,6 +15,13 @@
     <link rel="stylesheet" href="{% static 'noteflow.css' %}" />
   </head>
   <body>
+    <div class="loader" id="loader">
+      <div class="book">
+        <div class="page"></div>
+        <div class="page page2"></div>
+      </div>
+    </div>
+    
     <header>
       <h1 style="color: #fff">NF</h1>
       <div>
@@ -163,10 +170,27 @@
           window.scrollTo({
             top: 700,
             left: 0,
-            behavior:"smooth"
+            behavior: "smooth",
           });
         });
       F;
+    </script>
+
+    <!-- loadscreen -->
+
+    <script>
+      window.addEventListener("load", function () {
+        const loader = document.getElementById("loader");
+        loader.classList.add("hidden");
+        loader.addEventListener("transitionend", function () {
+          loader.remove();
+        });
+      });
+      setTimeout(() => {
+        if (document.body.contains(loader)) {
+          loader.remove();
+        }
+      }, 8000);
     </script>
   </body>
 </html>
