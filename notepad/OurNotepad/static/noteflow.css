@@ -12,7 +12,7 @@ body {
   --margin-inline: 10vw;
   --main-color: black;
   --title-color: #222;
-  --link-color: #2a3139;
+  --link-color: #2e4259;
   --strong-color: #212f42;
   --title-size: 2rem;
   --paragraph-size: 15px;
@@ -39,13 +39,33 @@ header {
 
 header div {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 25px;
 }
 
 header a {
   color: #ffffff;
   font-size: var(--paragraph-size);
+  text-align: center;
   text-decoration: none;
+  position: relative;
+  height: 20px;
+  width: 100px;
+}
+
+header a::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  height: 3px;
+  background-color: #fff;
+  width: 0;
+  transition: .3s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+header a:hover::before{
+  width: 100%;
 }
 
 .intro-text {
@@ -66,17 +86,18 @@ header a {
 }
 .intro-text a {
   color: #fff;
+  border: 2px solid #fff;
   text-decoration: none;
   background-color: #000000;
   padding: var(--padding);
   border-radius: 30px;
-  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  transition: 0.1s ease;
 }
 .intro-text a:hover {
-  background: radial-gradient(circle, #ffffff 10%, #bebecd 90%);
+  background: #fff;
   color: #000;
   text-decoration: none;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .intro-text p {
@@ -251,6 +272,12 @@ header a {
   font-size: small;
   margin-top: auto;
   }
+
+.extra-links a:hover{
+  color: #000;
+  text-decoration: underline;
+}
+
 .extra-links div {
   font-size: 0.9rem;
   display: flex;
