@@ -50,7 +50,7 @@
             {% for note in notes %}
                 <a href="{% url 'note-detail' note.slug %}">
                     <div class="note">
-                        <div class="title">{{ note.title }} </div>
+                        <div class="title">{{ note.name_snippet }} </div>
                         <div class="snippet">{{ note.snippet }}</div>   
                         <div class="date">created {{ note.created_at }}</div>
                     </div>
