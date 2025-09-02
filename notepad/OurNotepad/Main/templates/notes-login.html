@@ -1,14 +1,22 @@
-{% extends "base.html" %}
-{% block content %}
-    <h1>Login to NoteFlow</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        {% if form.errors %}
-            <p style="color: red;">Invalid username or password.</p>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+        <h1>Welcome back to your flow</h1>
+        <form method="post">
+        {% csrf_token %} {{ form.as_p }} {% if form.errors %}
+        <p style="color: red">Invalid username or password.</p>
         {% endif %}
         <button type="submit">Login</button>
-    </form>
-    <p>dont have an account <a href="{% url 'signup' %}">Signup</a></p>
-{% endblock %}
-
+        </form>
+        <p>dont have an account <a href="{% url 'signup' %}">Signup</a></p>
+    </div>
+  </body>
+</html>
