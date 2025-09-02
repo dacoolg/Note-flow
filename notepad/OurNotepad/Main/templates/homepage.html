@@ -6,6 +6,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
     />
+    <script
+      src="https://kit.fontawesome.com/483be17929.js"
+      crossorigin="anonymous"
+    ></script>
     <title>NoteFlow</title>
     <!-- Link Swiper's CSS -->
     <link
@@ -21,13 +25,16 @@
         <div class="page page2"></div>
       </div>
     </div>
-    
+
     <header>
       <h1 style="color: #fff">NF</h1>
-      <div>
-        <a href="#">Home</a>
-        <a href="#">About us</a>
-        <a href="#">Blog</a>
+      <div class="dropdown" id="drop-down" >
+        <i class="fa-solid fa-list"></i>
+        <div class="drop-links" id="menulinks">
+          <a href="#">Home</a>
+          <a href="#">About us</a>
+          <a href="#">Blog</a>
+        </div>
       </div>
       <a href="{% url 'recent-notes' %}" class="login">Login/Sign Up</a>
     </header>
@@ -76,7 +83,7 @@
       </div>
     </div>
 
-    <div class="extra-info" id="tar">
+    <div class="extra-info">
       <div class="row">
         <div class="text" id="text1">
           <strong id="sub1">Seamless Writting</strong>
@@ -153,16 +160,14 @@
         slidesPerView: 1,
         spaceBetween: 0,
         loop: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
         autoplay: {
           delay: 2500,
-          clickable: true,
+          clickable: false,
         },
       });
     </script>
+
+    <!-- chevrondown scroller -->
     <script>
       document
         .getElementById("scrolldwn")
@@ -177,7 +182,6 @@
     </script>
 
     <!-- loadscreen -->
-
     <script>
       window.addEventListener("load", function () {
         const loader = document.getElementById("loader");
@@ -191,6 +195,17 @@
           loader.remove();
         }
       }, 8000);
+
+      let menubtn = document.getElementById("drop-down")
+      menubtn.addEventListener("click", function(){
+        let droplinks = document.getElementById("menulinks")
+        if (!droplinks.classList.contains("dropped")) {
+          droplinks.classList.add('dropped')
+        }
+        else{
+          droplinks.classList.remove('dropped')
+        }
+      })
     </script>
   </body>
 </html>

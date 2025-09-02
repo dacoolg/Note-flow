@@ -9,7 +9,7 @@ body {
 }
 
 :root {
-  --margin-inline: 10vw;
+  --margin-inline: 20vw;
   --main-color: black;
   --title-color: #222;
   --link-color: #2e4259;
@@ -17,9 +17,66 @@ body {
   --title-size: 2rem;
   --paragraph-size: 15px;
   --link-size: 12px;
-  --padding: 10px;
+  --padding: 20px;
   --header-height: 60px;
   --padding: 15px 10px;
+}
+
+.loader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --book-color: #000;
+  --book-cover-color: #506c86;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 102;
+  background: #fff;
+  transition: 0.2s ease-out;
+}
+
+.book {
+  width: 150px;
+  height: 13px;
+  background-color: var(--book-color);
+  border-bottom: 2px solid var(--book-cover-color);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.page {
+  width: 50%;
+  height: 2px;
+  background-color: var(--book-color);
+  animation: paging 0.7s ease-out infinite;
+  transform-origin: left;
+}
+
+.page2 {
+  width: 50%;
+  height: 2px;
+  background-color: var(--book-color);
+  animation: paging 0.8s ease-out infinite;
+  transform-origin: left;
+  position: absolute;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes paging {
+  10% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(-180deg);
+  }
 }
 
 header {
@@ -37,11 +94,19 @@ header {
   z-index: 100;
 }
 
-header div {
+.dropdown {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 25px;
+}
+.dropdown i {
+  visibility: hidden;
+}
+.drop-links {
+  display: flex;
+  gap: 20px;
+}
+header i {
+  display: none;
 }
 
 header a {
@@ -62,10 +127,13 @@ header a::before {
   height: 3px;
   background-color: #fff;
   width: 0;
-  transition: .3s cubic-bezier(0.215, 0.610, 0.355, 1);
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-header a:hover::before{
-  width: 100%;
+
+@media (hover:hover) and (pointer: fine) {
+  header a:hover::before {
+    width: 100%;
+  }
 }
 
 .intro-text {
@@ -79,11 +147,13 @@ header a:hover::before{
   flex-direction: column;
   align-items: center;
 }
+
 .intro-text h2 {
   text-wrap: nowrap;
   font-size: 8vw;
   text-align: center;
 }
+
 .intro-text a {
   color: #fff;
   border: 2px solid #fff;
@@ -232,60 +302,37 @@ header a:hover::before{
 }
 
 .extra-info {
-  margin-inline: var(--margin-inline);
+  margin: 90px var(--margin-inline);
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 150px;
   padding: var(--padding);
-  gap: 90px;
+  gap: 120px;
 }
+
 .row {
   display: flex;
   flex-wrap: nowrap;
-  gap: 50px;
+  justify-content: center;
+  gap: 20px;
   width: 100%;
-  height: 200px;
+  height: 250px;
+  overflow: hidden;
 }
+
 .text {
   width: 60%;
-  height: 110%;
-  padding: var(--padding);
+  height: 150px;
+  padding: 50px 100px;
+  position: relative;
+  text-wrap: wrap;
 }
+
 .row img {
-  width: 30%;
-  height: 120%;
-  background-color: #202020;
-}
-
-.extra-links {
-  display: grid;
-  grid-template-columns: 1fr 20% 20%;
-  padding: 0 0 20px 0;
-  gap: 20px;
-  margin: 200px var(--margin-inline) 0 var(--margin-inline);
-  border-top: 1px solid #1f203a;
-}
-.extra-links a {
-  color: var(--link-color);
-  text-decoration: none;
-  font-size: small;
-  margin-top: auto;
-  }
-
-.extra-links a:hover{
-  color: #000;
-  text-decoration: underline;
-}
-
-.extra-links div {
-  font-size: 0.9rem;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-}
-h4 {
-  text-wrap: nowrap;
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
 }
 
 strong {
@@ -305,66 +352,121 @@ strong {
   color: #df7d7d;
 }
 
-#text1{
-  background: radial-gradient(at top left,#dffed0 2%,transparent);
+#text1 {
+  background: radial-gradient(at top left, #eeffe6 50%, transparent, #fff);
 }
 
-#text2{
-  background: radial-gradient(at top right,#d4eaff 2%,transparent);
+#text2 {
+  background: radial-gradient(at top right, #e6f8ff 50%, transparent, #fff);
 }
 
-#text3{
-  background: radial-gradient(at top left,#ffe3e3 2%,transparent);
+#text3 {
+  background: radial-gradient(at top left, #fff3f3 50%, transparent, #fff);
 }
 
-.loader {
-  width: 100vw;
-  height: 100vh;
+.extra-links {
+  display: grid;
+  grid-template-columns: 1fr 20% 20%;
+  padding: 0 0 20px 0;
+  gap: 30px;
+  margin: 50px var(--margin-inline) 0 var(--margin-inline);
+  border-top: 1px solid #1f203a;
+}
+
+.extra-links a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-size: small;
+  margin-top: auto;
+}
+
+.extra-links a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.extra-links div {
+  font-size: 0.9rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  --book-color: #000;
-  --book-cover-color: #506c86;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 102;
-  background: #fff;
-  transition: .2s ease-out;
+  flex-direction: column;
+  align-items: start;
 }
-.book {
-  width: 150px;
-  height: 13px;
-  background-color: var(--book-color);
-  border-bottom: 2px solid var(--book-cover-color);
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  position: relative;
+
+h4 {
+  text-wrap: nowrap;
 }
-.page {
-  width: 50%;
-  height: 2px;
-  background-color: var(--book-color);
-  animation: paging 0.7s ease-out infinite;
-  transform-origin: left;
-}
-.page2 {
-  width: 50%;
-  height: 2px;
-  background-color: var(--book-color);
-  animation: paging 0.8s ease-out infinite;
-  transform-origin: left;
-  position: absolute;
-}
-.hidden{
-  display: none;
-}
-@keyframes paging {
-  10% {
-    transform: rotateZ(0deg);
+
+@media only screen and (max-width: 1090px) {
+  .dropdown i {
+    visibility: visible;
+    color: #fff;
   }
-  100% {
-    transform: rotateZ(-180deg);
+
+  .drop-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    background-color: #171728;
+    width: 100vw;
+  }
+
+  .drop-links a {
+    border-bottom: 1px solid #fff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 10px 20px;
+  }
+
+  .dropped {
+    display: block;
+  }
+
+  .extra-info {
+    margin: 90px 150px;
+  }
+
+  .row {
+    position: relative;
+    background-color: black;
+  }
+
+  .extra-info img {
+    width: 100%;
+    opacity: 0.4;
+    z-index: 1;
+  }
+
+  .text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 90%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: #fff;
+  }
+
+  #text1,
+  #text2,
+  #text3 {
+    background: none;
+  }
+
+  strong {
+    text-wrap: wrap;
+  }
+
+  .extra-links {
+    display: block;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .extra-info{
+    margin: 90px 30px;
+  }
+}
+

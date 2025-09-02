@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&family=Rubik:ital,wght@0,300..900;1,300..900&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap");
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: itim;
+}
+
+body{
+    background: #fff;
+    position: relative;
+}
+
+.container{
+    position: absolute;
+    right: 200px;
+    margin-top: 100px;
+}
