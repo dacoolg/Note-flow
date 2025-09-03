@@ -9,7 +9,7 @@ body {
   scroll-behavior: smooth;
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
   display: none;
 }
 
@@ -345,11 +345,17 @@ strong {
   text-wrap: nowrap;
 }
 
-.extra-info svg {
+.row svg {
   position: absolute;
   width: 100px;
   height: 100px;
   object-fit: cover;
+  opacity: 0;
+  transition: .3s ease-in;
+}
+
+.row:hover svg {
+  opacity: 1;
 }
 
 #first,

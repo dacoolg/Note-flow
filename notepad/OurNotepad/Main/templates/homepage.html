@@ -987,18 +987,17 @@
   <script>
     let chevron = document.querySelector(".scrolldown")
     chevron.addEventListener("click", function () {
-      function scrolltoelement(element) {
-        const marginbefore = element.style.scrollMargin
-        element.style.scrollMargin = `${window.innerHeight / 3}px`
-        element.scrollIntoView()
-        setTimeout(() => {
-          element.style.scrollMargin = marginbefore
-        }, 2000);
-      }
-
       const target = document.querySelector(".extra-info")
       scrolltoelement(target)
     })
+    function scrolltoelement(element) {
+      const marginbefore = element.style.scrollMargin
+      element.style.scrollMargin = `${window.innerHeight / 3}px`
+      element.scrollIntoView()
+      setTimeout(() => {
+        element.style.scrollMargin = marginbefore
+      }, 2000);
+    }
 
   </script>
 
