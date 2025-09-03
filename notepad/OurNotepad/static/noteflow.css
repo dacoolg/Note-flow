@@ -130,7 +130,7 @@ header a::before {
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-@media (hover:hover) and (pointer: fine) {
+@media (hover: hover) and (pointer: fine) {
   header a:hover::before {
     width: 100%;
   }
@@ -302,7 +302,6 @@ header a::before {
 }
 
 .extra-info {
-  margin: 90px var(--margin-inline);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -312,18 +311,19 @@ header a::before {
 }
 
 .row {
+  padding-inline: var(--margin-inline);
+  position: relative;
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
   gap: 20px;
-  width: 100%;
   height: 250px;
   overflow: hidden;
 }
 
 .text {
   width: 60%;
-  height: 150px;
+  height: 100%;
   padding: 50px 100px;
   position: relative;
   text-wrap: wrap;
@@ -338,6 +338,73 @@ header a::before {
 strong {
   font-size: var(--title-size);
   text-wrap: nowrap;
+}
+
+#first, #second, #third, #fourth {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+#first,
+#second {
+  left: 5vw;
+  animation: float 5s ease-in-out infinite alternate, spin 40s linear infinite;
+}
+
+#third,
+#fourth {
+  right: 5vw;
+  animation: float-reverse 5s ease-in-out infinite alternate, spin-reverse 40s linear infinite;
+}
+
+#first,
+#third {
+  top: 0;
+}
+
+#second,
+#fourth {
+  bottom: 0;
+}
+
+@keyframes float {
+  0%{
+    translate: 0 0 ;
+  }
+
+  100%{
+    translate: 30px;
+  }
+}
+
+@keyframes spin {
+  0%{
+    rotate: 0deg;
+  }
+  100%{
+    rotate: 360deg;
+  }
+}
+
+@keyframes float-reverse {
+  0%{
+    translate: 0 0 ;
+  }
+
+  100%{
+    translate: -30px;
+  }
+}
+
+@keyframes spin-reverse {
+  0%{
+    rotate: 0deg;
+  }
+  100%{
+    rotate: -360deg;
+  }
 }
 
 #sub1 {
@@ -465,8 +532,7 @@ h4 {
 }
 
 @media only screen and (max-width: 600px) {
-  .extra-info{
+  .extra-info {
     margin: 90px 30px;
   }
 }
-
