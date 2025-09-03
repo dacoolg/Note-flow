@@ -6,6 +6,11 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-family: itim;
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar{
+  display: none;
 }
 
 :root {
@@ -340,7 +345,7 @@ strong {
   text-wrap: nowrap;
 }
 
-#first, #second, #third, #fourth {
+.extra-info svg {
   position: absolute;
   width: 100px;
   height: 100px;
@@ -356,7 +361,8 @@ strong {
 #third,
 #fourth {
   right: 5vw;
-  animation: float-reverse 5s ease-in-out infinite alternate, spin-reverse 40s linear infinite;
+  animation: float-reverse 5s ease-in-out infinite alternate,
+    spin-reverse 40s linear infinite;
 }
 
 #first,
@@ -370,39 +376,39 @@ strong {
 }
 
 @keyframes float {
-  0%{
-    translate: 0 0 ;
+  0% {
+    translate: 0 0;
   }
 
-  100%{
+  100% {
     translate: 30px;
   }
 }
 
 @keyframes spin {
-  0%{
+  0% {
     rotate: 0deg;
   }
-  100%{
+  100% {
     rotate: 360deg;
   }
 }
 
 @keyframes float-reverse {
-  0%{
-    translate: 0 0 ;
+  0% {
+    translate: 0 0;
   }
 
-  100%{
+  100% {
     translate: -30px;
   }
 }
 
 @keyframes spin-reverse {
-  0%{
+  0% {
     rotate: 0deg;
   }
-  100%{
+  100% {
     rotate: -360deg;
   }
 }

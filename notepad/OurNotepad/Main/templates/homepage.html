@@ -61,7 +61,7 @@
       <p>Your Story deseverse to be written</p>
       <a href="{% url 'recent-notes' %}">Begin Your Journey Today</a>
     </div>
-    <div class="scrolldown" id="scrolldwn">
+    <div class="scrolldown">
       <div class="chevrons">
         <div class="chevrondown"></div>
         <div class="chevrondown"></div>
@@ -985,16 +985,21 @@
 
   <!-- chevrondown scroller -->
   <script>
-    document
-      .getElementById("scrolldwn")
-      .addEventListener("click", function () {
-        window.scrollTo({
-          top: 700,
-          left: 0,
-          behavior: "smooth",
-        });
-      });
-    F;
+    let chevron = document.querySelector(".scrolldown")
+    chevron.addEventListener("click", function () {
+      function scrolltoelement(element) {
+        const marginbefore = element.style.scrollMargin
+        element.style.scrollMargin = `${window.innerHeight / 3}px`
+        element.scrollIntoView()
+        setTimeout(() => {
+          element.style.scrollMargin = marginbefore
+        }, 2000);
+      }
+
+      const target = document.querySelector(".extra-info")
+      scrolltoelement(target)
+    })
+
   </script>
 
   <!-- loadscreen -->
