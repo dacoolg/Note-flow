@@ -31,7 +31,11 @@
         <a href="#">Blog</a>
       </div>
     </div>
-    <a href="{% url 'recent-notes' %}" class="login">Login/Sign Up</a>
+    {% if user.is_authenticated %}
+      <a href="{% url 'recent-notes' %}" class="login" id="cont">Continue</a>
+    {% else %}
+      <a href="{% url 'login' %}">Login/SignUP</a>
+    {% endif %}
   </header>
 
   <!-- Swiper -->

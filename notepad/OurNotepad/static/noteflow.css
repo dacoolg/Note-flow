@@ -124,6 +124,19 @@ header a {
   width: 100px;
 }
 
+#cont{
+  background-color: #fff;
+  color: #000;
+  height: 40px;
+  align-content: center;
+  border-radius: 10px;
+  transition: all .3s ease-out;
+}
+#cont:hover{
+  background-color: transparent;
+  color: #fff;
+}
+
 header a::before {
   content: "";
   position: absolute;
