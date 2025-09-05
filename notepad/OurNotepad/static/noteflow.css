@@ -124,15 +124,15 @@ header a {
   width: 100px;
 }
 
-#cont{
+#cont {
   background-color: #fff;
   color: #000;
   height: 40px;
   align-content: center;
   border-radius: 10px;
-  transition: all .3s ease-out;
+  transition: all 0.3s ease-out;
 }
-#cont:hover{
+#cont:hover {
   background-color: transparent;
   color: #fff;
 }
@@ -195,6 +195,7 @@ header a::before {
 .swiper {
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 }
 .swiper::before {
   content: "";
@@ -320,23 +321,9 @@ header a::before {
 }
 
 .extra-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: block;
   margin-top: 150px;
   padding: var(--padding);
-  gap: 120px;
-}
-
-.row {
-  padding-inline: var(--margin-inline);
-  position: relative;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  gap: 20px;
-  height: 250px;
-  overflow: hidden;
 }
 
 .text {
@@ -358,13 +345,28 @@ strong {
   text-wrap: nowrap;
 }
 
+.row {
+  padding-inline: var(--margin-inline);
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 20px;
+  height: 250px;
+  overflow: hidden;
+  background: transparent;
+  margin-bottom: 120px;
+  z-index: 2;
+}
+
 .row svg {
   position: absolute;
   width: 100px;
   height: 100px;
   object-fit: cover;
   opacity: 0;
-  transition: .3s ease-in;
+  transition: 0.3s ease-in;
+  z-index: 3;
 }
 
 .row:hover svg {
@@ -528,6 +530,7 @@ h4 {
   .extra-info img {
     width: 100%;
     opacity: 0.4;
+    object-fit: cover;
     z-index: 1;
   }
 
