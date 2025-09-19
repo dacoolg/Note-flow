@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&family=Rubik:ital,wght@0,300..900;1,300..900&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap");
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: itim;
+}
+
+body {
+  overflow: hidden;
+}
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -60%;
+  width: 27%;
+}
+
+h1 {
+  margin: 20px 0;
+}
+
+input {
+  width: 100%;
+  height: 30px;
+  border: 2px solid #000;
+  margin: 5px 0;
+  padding: 5px 10px;
+}
+
+input:focus {
+  border: 3px solid;
+}
+
+.options {
+  margin: 20px 0 15px 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+}
+
+button {
+  width: 100%;
+  height: 30px;
+  border: none;
+  font-size: 1.05rem;
+  background: #bcbcbc;
+  cursor: pointer;
+}
+
+button:hover{
+  border: 2px solid #a1a1a1;
+}
+
+button[type="submit"] {
+  background: #248fe7;
+}
+
+.google:hover ,button[type="submit"]:hover{
+  border: 2px solid #2e569a;
+}
+
+.google {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 40px;
+  color: #000;
+  background: #219bff62;
+}
+
+.google,
+button,
+input {
+  border-radius: 10px;
+}
+
+img {
+  width: 20px;
+}
+
+.color1,
+.color2,
+.color3 {
+  position: fixed;
+  width: 45%;
+  height: 90%;
+}
+
+.color1 {
+  background: radial-gradient(at center, #20b4ce36 0%, transparent 70%);
+  left: -150px;
+  top: 50%;
+  translate: 0 -50%;
+}
+
+.color2 {
+  background: radial-gradient(at center, #66ce2039 0%, transparent 70%);
+  right: -100px;
+  top: -100px;
+}
+
+.color3 {
+  background: radial-gradient(at center, #f8347c42 0%, transparent 70%);
+  right: -100px;
+  bottom: -200px;
+}
+
+.group1,
+.group2,
+.group3 {
+  position: fixed;
+  width: fit-content;
+  height: fit-content;
+  z-index: -1;
+}
+
+.group1 {
+  left: 0;
+  top: 50%;
+  translate: 0 -50%;
+}
+
+.group2,
+.group3 {
+  right: 20px;
+}
+
+.group2 {
+  top: 0;
+}
+
+.group3 {
+  bottom: 0;
+}
+
+.group1 svg {
+  width: 30vw;
+}
+
+.group2 svg,
+.group3 svg {
+  width: 20vw;
+}
+
+svg + p {
+  position: absolute;
+}
+
+.group1 svg + p {
+  bottom: 230px;
+  left: 60px;
+}
+
+.group2 svg + p {
+  transform: rotate(70deg);
+  left: -70px;
+  bottom: 70px;
+}
+
+.group3 svg + p {
+  transform: rotate(-70deg);
+  left: -90px;
+  top: 50px;
+}
