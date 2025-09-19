@@ -50,8 +50,16 @@ button {
   cursor: pointer;
 }
 
+button:hover{
+  border: 2px solid #a1a1a1;
+}
+
 button[type="submit"] {
   background: #248fe7;
+}
+
+.google:hover ,button[type="submit"]:hover{
+  border: 2px solid #2e569a;
 }
 
 .google {
