@@ -7,8 +7,9 @@
 body {
   overflow: hidden;
 }
+
 .container {
-  /* border: 1px solid black; */
+  width: 30%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -18,10 +19,6 @@ body {
 
 .container h1 {
   margin-bottom: 40px;
-}
-
-.container form {
-  display: block;
 }
 
 input[type="text"],
@@ -119,7 +116,7 @@ p {
 }
 
 svg{
-    width: 200px;
+    width: 15vw;
   }
 
 #img1{
@@ -158,3 +155,4 @@ svg{
   left: -40px;
   rotate: -70deg;
 }
+

@@ -88,27 +88,28 @@ img {
 .color2,
 .color3 {
   position: fixed;
-  width: 45%;
-  height: 90%;
+  width: 60%;
+  height: 120%;
+  z-index: -1;
 }
 
 .color1 {
-  background: radial-gradient(at center, #20b4ce36 0%, transparent 70%);
+  background: radial-gradient(at center, #00d9fa58 0%, transparent 70%);
   left: -150px;
   top: 50%;
   translate: 0 -50%;
 }
 
 .color2 {
-  background: radial-gradient(at center, #66ce2039 0%, transparent 70%);
-  right: -100px;
-  top: -100px;
+  background: radial-gradient(at center, #1eff004f 0%, transparent 70%);
+  right: -150px;
+  top: -260px;
 }
 
 .color3 {
-  background: radial-gradient(at center, #f8347c42 0%, transparent 70%);
-  right: -100px;
-  bottom: -200px;
+  background: radial-gradient(at center, #ff000042 0%, transparent 70%);
+  right: -250px;
+  bottom: -250px;
 }
 
 .group1,
@@ -117,7 +118,7 @@ img {
   position: fixed;
   width: fit-content;
   height: fit-content;
-  z-index: -1;
+  z-index: -2;
 }
 
 .group1 {
@@ -126,9 +127,8 @@ img {
   translate: 0 -50%;
 }
 
-.group2,
-.group3 {
-  right: 20px;
+.group2{
+  right: 250px;
 }
 
 .group2 {
@@ -137,6 +137,7 @@ img {
 
 .group3 {
   bottom: 0;
+  right: 30px;
 }
 
 .group1 svg {
@@ -145,7 +146,7 @@ img {
 
 .group2 svg,
 .group3 svg {
-  width: 20vw;
+  width: 10vw;
 }
 
 svg + p {
@@ -158,13 +159,11 @@ svg + p {
 }
 
 .group2 svg + p {
-  transform: rotate(70deg);
-  left: -70px;
-  bottom: 70px;
+  right: -150px;
+  top: 100px;
 }
 
 .group3 svg + p {
-  transform: rotate(-70deg);
-  left: -90px;
-  top: 50px;
+  left: -200px;
+  top: 100px;
 }
