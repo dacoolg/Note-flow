@@ -5,8 +5,14 @@
   font-family: itim;
 }
 
+:root{
+  color-scheme: light dark;
+}
+
 body {
   overflow: hidden;
+  background-color: ligh-dark(#fff, #444);
+  color: light-dark(#000, #fff);
 }
 
 .container {
@@ -24,7 +30,7 @@ h1 {
 input {
   width: 100%;
   height: 30px;
-  border: 2px solid #000;
+  border: 1px solid;
   margin: 5px 0;
   padding: 5px 10px;
 }
@@ -44,9 +50,9 @@ input:focus {
 button {
   width: 100%;
   height: 30px;
-  border: none;
+  border: 1px solid;
   font-size: 1.05rem;
-  background: #bcbcbc;
+  background: ligh-dark(#bcbcbc,#2e2e2e);
   cursor: pointer;
 }
 
@@ -70,8 +76,10 @@ button[type="submit"] {
   gap: 10px;
   width: 100%;
   height: 40px;
-  color: #000;
   background: #219bff62;
+}
+.google p{
+  color: light-dark(#000,#fff);
 }
 
 .google,
@@ -94,20 +102,20 @@ img {
 }
 
 .color1 {
-  background: radial-gradient(at center, #00d9fa58 0%, transparent 70%);
+  background: radial-gradient(at center, light-dark(#00d9fa58,#00d9fa29) 0%, transparent 70%);
   left: -150px;
   top: 50%;
   translate: 0 -50%;
 }
 
 .color2 {
-  background: radial-gradient(at center, #1eff004f 0%, transparent 70%);
+  background: radial-gradient(at center, light-dark(#1eff004f,#1eff0021) 0%, transparent 70%);
   right: -150px;
   top: -260px;
 }
 
 .color3 {
-  background: radial-gradient(at center, #ff00004a 0%, transparent 70%);
+  background: radial-gradient(at center, light-dark(#ff00004a,#ff000025) 0%, transparent 70%);
   right: -250px;
   bottom: -250px;
 }
@@ -118,7 +126,6 @@ img {
   position: fixed;
   width: fit-content;
   height: fit-content;
-  z-index: -2;
 }
 
 .group1 {
@@ -140,6 +147,10 @@ img {
   right: 30px;
 }
 
+svg{
+  stroke: #000;
+}
+
 .group1 svg {
   width: 30vw;
 }
@@ -151,6 +162,7 @@ img {
 
 svg + p {
   position: absolute;
+  color: light-dark(#000, #d2d2d2);
 }
 
 .group1 svg + p {
