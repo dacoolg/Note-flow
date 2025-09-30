@@ -22,6 +22,7 @@ body {
   left: 50%;
   transform: translate(-50%, -40%);
   height: 70vh;
+  z-index: 100;
 }
 
 .container h1 {
@@ -123,8 +124,7 @@ p {
 
 .group {
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: fit-content;
   padding: 0;
 }
 
@@ -133,7 +133,7 @@ svg {
 }
 
 #img1 {
-  bottom: 200px;
+  bottom: 150px;
   right: 100px;
 }
 
@@ -159,13 +159,13 @@ svg {
 
 .txt1 {
   right: -40px;
-  bottom: 0px;
+  bottom: 50px;
   rotate: -40deg;
 }
 
 .txt2 {
   top: 180px;
-  right: -270px;
+  right: -180px;
   text-wrap: nowrap;
 }
 
@@ -173,4 +173,57 @@ svg {
   top: 50px;
   left: -40px;
   rotate: -70deg;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 40%;
+  }
+
+  h1 {
+    text-wrap: nowrap;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  svg {
+    width: 15vw;
+  }
+
+  #img1 {
+    width: 15vw;
+    right: 210px;
+  }
+
+  .txt1 {
+    bottom: 80px;
+    right: -50px;
+  }
+
+  #img2 svg {
+    width: 25vw;
+  }
+
+  .txt2 {
+    top: 220px;
+  }
+
+  #img3 {
+    left: 250px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container{
+    font-size: 16px;
+    width: 70%;
+  }
+
+  .container ~ div {
+    display: none;
+  }
+  
+  h1 {
+    font-size: 18px;
+  }
 }

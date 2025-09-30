@@ -5,13 +5,13 @@
   font-family: itim;
 }
 
-:root{
+:root {
   color-scheme: light dark;
 }
 
 body {
   overflow: hidden;
-  background-color: ligh-dark(#fff, #444);
+  background-color: light-dark(#fff, #444);
   color: light-dark(#000, #fff);
 }
 
@@ -21,6 +21,7 @@ body {
   top: 50%;
   translate: -50% -60%;
   width: 27%;
+  z-index: 100;
 }
 
 h1 {
@@ -52,19 +53,21 @@ button {
   height: 30px;
   border: 1px solid;
   font-size: 1.05rem;
-  background: ligh-dark(#bcbcbc,#2e2e2e);
+  background: ligh-dark(#bcbcbc, #2e2e2e);
   cursor: pointer;
 }
 
-button:hover{
+button:hover {
   border: 2px solid #a1a1a1;
 }
 
 button[type="submit"] {
   background: #248fe7;
+  border: none;
 }
 
-.google:hover ,button[type="submit"]:hover{
+.google:hover,
+button[type="submit"]:hover {
   border: 2px solid #2e569a;
 }
 
@@ -78,8 +81,8 @@ button[type="submit"] {
   height: 40px;
   background: #219bff62;
 }
-.google p{
-  color: light-dark(#000,#fff);
+.google p {
+  color: light-dark(#000, #fff);
 }
 
 .google,
@@ -102,20 +105,32 @@ img {
 }
 
 .color1 {
-  background: radial-gradient(at center, light-dark(#00d9fa58,#00d9fa29) 0%, transparent 70%);
+  background: radial-gradient(
+    at center,
+    light-dark(#00d9fa58, #00d9fa29) 0%,
+    transparent 70%
+  );
   left: -150px;
   top: 50%;
   translate: 0 -50%;
 }
 
 .color2 {
-  background: radial-gradient(at center, light-dark(#1eff004f,#1eff0021) 0%, transparent 70%);
+  background: radial-gradient(
+    at center,
+    light-dark(#1eff004f, #1eff0021) 0%,
+    transparent 70%
+  );
   right: -150px;
   top: -260px;
 }
 
 .color3 {
-  background: radial-gradient(at center, light-dark(#ff00004a,#ff000025) 0%, transparent 70%);
+  background: radial-gradient(
+    at center,
+    light-dark(#ff00004a, #ff000025) 0%,
+    transparent 70%
+  );
   right: -250px;
   bottom: -250px;
 }
@@ -134,8 +149,8 @@ img {
   translate: 0 -50%;
 }
 
-.group2{
-  right: 250px;
+.group2 {
+  right: 150px;
 }
 
 .group2 {
@@ -147,7 +162,7 @@ img {
   right: 30px;
 }
 
-svg{
+svg {
   stroke: #000;
 }
 
@@ -163,6 +178,7 @@ svg{
 svg + p {
   position: absolute;
   color: light-dark(#000, #d2d2d2);
+  font-size: 14px;
 }
 
 .group1 svg + p {
@@ -171,11 +187,43 @@ svg + p {
 }
 
 .group2 svg + p {
-  right: -150px;
+  right: -130px;
   top: 100px;
 }
 
 .group3 svg + p {
   left: -200px;
   top: 100px;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    width: calc(100vw - 60%);
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .group1 {
+    left: -40px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    width: calc(100vw - 100px);
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+  svg, svg + p {
+    display: none;
+  }
+
+  .color1, .color2, .color3{
+    display: none;
+  }
 }

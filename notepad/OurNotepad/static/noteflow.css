@@ -22,7 +22,7 @@ body::-webkit-scrollbar {
   --title-size: 2rem;
   --paragraph-size: 15px;
   --link-size: 12px;
-  --padding: 20px;
+  --padding: 1.4vw;
   --header-height: 60px;
   --padding: 15px 10px;
 }
@@ -103,13 +103,16 @@ header {
   display: flex;
   align-items: center;
 }
+
 .dropdown i {
   visibility: hidden;
 }
+
 .drop-links {
   display: flex;
   gap: 20px;
 }
+
 header i {
   display: none;
 }
@@ -124,6 +127,16 @@ header a {
   width: 100px;
 }
 
+h1,
+.login {
+  width: 80px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  padding: 0;
+}
+
 #cont {
   background-color: #fff;
   color: #000;
@@ -132,6 +145,7 @@ header a {
   border-radius: 10px;
   transition: all 0.3s ease-out;
 }
+
 #cont:hover {
   background-color: transparent;
   color: #fff;
@@ -151,6 +165,43 @@ header a::before {
 @media (hover: hover) and (pointer: fine) {
   header a:hover::before {
     width: 100%;
+  }
+
+  .row svg {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    opacity: 0;
+    transition: 0.3s ease-in;
+    z-index: 3;
+  }
+
+  .row:hover svg {
+    opacity: 1;
+  }
+
+  #first,
+  #second {
+    left: 5vw;
+    animation: float 5s ease-in-out infinite alternate, spin 40s linear infinite;
+  }
+
+  #third,
+  #fourth {
+    right: 5vw;
+    animation: float-reverse 5s ease-in-out infinite alternate,
+      spin-reverse 40s linear infinite;
+  }
+
+  #first,
+  #third {
+    top: 0;
+  }
+
+  #second,
+  #fourth {
+    bottom: 0;
   }
 }
 
@@ -180,6 +231,7 @@ header a::before {
   padding: var(--padding);
   border-radius: 30px;
   transition: 0.1s ease;
+  font-size: 15px;
 }
 .intro-text a:hover {
   background: #fff;
@@ -190,6 +242,13 @@ header a::before {
 
 .intro-text p {
   margin-top: -6%;
+  font-size: 20px;
+}
+
+.intro-text p,
+h2,
+a {
+  text-wrap: nowrap;
 }
 
 .swiper {
@@ -359,43 +418,6 @@ strong {
   z-index: 2;
 }
 
-.row svg {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  opacity: 0;
-  transition: 0.3s ease-in;
-  z-index: 3;
-}
-
-.row:hover svg {
-  opacity: 1;
-}
-
-#first,
-#second {
-  left: 5vw;
-  animation: float 5s ease-in-out infinite alternate, spin 40s linear infinite;
-}
-
-#third,
-#fourth {
-  right: 5vw;
-  animation: float-reverse 5s ease-in-out infinite alternate,
-    spin-reverse 40s linear infinite;
-}
-
-#first,
-#third {
-  top: 0;
-}
-
-#second,
-#fourth {
-  bottom: 0;
-}
-
 @keyframes float {
   0% {
     translate: 0 0;
@@ -491,6 +513,9 @@ h4 {
 }
 
 @media only screen and (max-width: 1090px) {
+  .dropdown {
+    margin-right: 20px;
+  }
   .dropdown i {
     visibility: visible;
     color: #fff;
@@ -518,8 +543,18 @@ h4 {
     display: block;
   }
 
+  .intro-text p {
+    font-size: 3vw;
+    margin: 5px 0 20px 0;
+  }
+
+  .intro-text a {
+    font-size: 2.8vw;
+  }
+
   .extra-info {
-    margin: 90px 150px;
+    margin: 90px 70px;
+    padding: 0;
   }
 
   .row {
@@ -529,19 +564,24 @@ h4 {
 
   .extra-info img {
     width: 100%;
-    opacity: 0.4;
+    opacity: 0.2;
     object-fit: cover;
-    z-index: 1;
+    position: absolute;
+  }
+
+  svg{
+    display: none;
   }
 
   .text {
+    text-align: center;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 90%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
+    top: -4%;
+  }
+
+  .text p{
     color: #fff;
+    font-size: clamp(14px, 2vw, 18px);
   }
 
   #text1,
