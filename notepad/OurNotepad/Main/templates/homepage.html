@@ -22,7 +22,7 @@
 
   <!-- header -->
   <header>
-    <h1 style="color: #fff">NF</h1>
+    <h1>NF</h1>
     <div class="dropdown" id="drop-down">
       <i class="fa-solid fa-list"></i>
       <div class="drop-links" id="menulinks">
@@ -34,7 +34,7 @@
     {% if user.is_authenticated %}
       <a href="{% url 'recent-notes' %}" class="login" id="cont">Continue</a>
     {% else %}
-      <a href="{% url 'login' %}">Login/SignUP</a>
+      <a href="{% url 'login' %}" class="login">Login/SignUP</a>
     {% endif %}
   </header>
 

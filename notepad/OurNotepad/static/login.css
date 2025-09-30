@@ -4,34 +4,42 @@
   box-sizing: border-box;
   font-family: itim;
 }
+
+:root {
+  color-scheme: light dark;
+}
+
 body {
   overflow: hidden;
+  background-color: light-dark(#fff, #444);
+  color: light-dark(#000, #fff);
 }
+
 .container {
-  /* border: 1px solid black; */
-  position: absolute;
+  width: 30%;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -40%);
   height: 70vh;
+  z-index: 100;
 }
 
 .container h1 {
   margin-bottom: 40px;
 }
 
-.container form {
-  display: block;
-}
-
-input[type="text"],
-input[type="password"] {
+input {
   width: 100%;
   height: 30px;
-  border: 2px solid #000;
+  border: 1px solid light-dark(#000, #fff);
   border-radius: 10px;
   padding-inline: 10px;
-  margin-bottom: 15px;
+  margin: 6px 0 20px 0;
+}
+
+input:focus {
+  border: 3px solid light-dark(#000, #fff);
 }
 
 div {
@@ -43,20 +51,19 @@ div {
   right: 5px;
   top: -22px;
   text-decoration: none;
-  color: #4b78c4;
+  color: light-dark(#4b78c4, #77cbff);
 }
 
-.forgot:hover {
-  color: #000;
+.forgot:hover,
+#signup:hover {
   text-decoration: underline;
-  transition: 0.5s;
 }
 
 .login-btn {
   width: 100%;
   border: none;
   height: 30px;
-  background: #2d5c8e;
+  background: light-dark(#2d5c8e, #4191e7);
   color: #fff;
   font-size: large;
   border-radius: 10px;
@@ -65,7 +72,7 @@ div {
 }
 
 .login-btn:hover {
-  background: #204368;
+  background: light-dark(#204368, #1d5998);
 }
 
 p {
@@ -74,87 +81,149 @@ p {
 }
 
 #signup {
+  color: light-dark(#4b78c4, #77cbff);
   text-decoration: none;
-}
-
-#signup:hover {
-  text-decoration: underline;
 }
 
 .color1,
 .color2,
 .color3 {
   position: fixed;
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   z-index: -1;
-  /* border-radius: 50%; */
 }
 
 .color1 {
-  top: -120px;
-  left: -20px;
-  background: radial-gradient(#baeeff 0%, transparent 70%);
+  top: -200px;
+  left: -200px;
+  background: radial-gradient(
+    light-dark(#00d9fa77, #00d9fa30) 0%,
+    transparent 70%
+  );
 }
 
-.color2{
-  bottom: 0;
-  left: 0;
-  background: radial-gradient(at bottom left, #f9cac3 0%, transparent 70%);
+.color2 {
+  bottom: -200px;
+  left: -200px;
+  background: radial-gradient(
+    light-dark(#ff00005b, #ff00002c) 0%,
+    transparent 70%
+  );
 }
 
-.color3{
-  right: -50px;
-  top: 50vh;
+.color3 {
+  right: -150px;
+  top: 50%;
   translate: 0 -50%;
-  background: radial-gradient(at right, #b3f9b4 0%, transparent 70%);
+  background: radial-gradient(
+    light-dark(#1eff0074, #1eff002c) 0%,
+    transparent 70%
+  );
 }
 
-.group{
-  position: fixed;
-  width: 200px;
-  height: 200px;
-  /* border: 1px solid #000; */
+.group {
+  position: absolute;
+  width: fit-content;
   padding: 0;
 }
 
-svg{
-    width: 200px;
-  }
-
-#img1{
-  top: -20px;
-  left: 100px;
+svg {
+  width: 200px;
 }
 
-#img2{
-  bottom: 20px;
-  left: 10px;
+#img1 {
+  bottom: 150px;
+  right: 100px;
 }
 
-#img3{
-  right: 0;
-  top: 50%;
-  translate: 0 -50%;
+#img2 {
+  top: 130px;
+  left: 200px;
 }
 
-.group p{
+#img2 svg {
+  width: 330px;
+}
+
+#img3 {
+  left: 150px;
+  top: 200px;
+  translate: 0 0;
+}
+
+.group p {
   position: absolute;
+  color: light-dark(#000, #dfdfdf);
 }
 
-.txt1{
+.txt1 {
   right: -40px;
-  bottom: 0px;
+  bottom: 50px;
   rotate: -40deg;
 }
 
-.txt2{
-  top: 60px;
-  right: 0;
+.txt2 {
+  top: 180px;
+  right: -180px;
+  text-wrap: nowrap;
 }
 
-.txt3{
+.txt3 {
   top: 50px;
   left: -40px;
   rotate: -70deg;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 40%;
+  }
+
+  h1 {
+    text-wrap: nowrap;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  svg {
+    width: 15vw;
+  }
+
+  #img1 {
+    width: 15vw;
+    right: 210px;
+  }
+
+  .txt1 {
+    bottom: 80px;
+    right: -50px;
+  }
+
+  #img2 svg {
+    width: 25vw;
+  }
+
+  .txt2 {
+    top: 220px;
+  }
+
+  #img3 {
+    left: 250px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container{
+    font-size: 16px;
+    width: 70%;
+  }
+
+  .container ~ div {
+    display: none;
+  }
+  
+  h1 {
+    font-size: 18px;
+  }
 }
