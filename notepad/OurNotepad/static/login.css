@@ -213,8 +213,12 @@ svg {
   }
 }
 
-@media screen and (max-width: 768px) {
-  .container{
+.mobile {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
     font-size: 16px;
     width: 70%;
   }
@@ -222,8 +226,22 @@ svg {
   .container ~ div {
     display: none;
   }
-  
+
   h1 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .mobile{
+    display: flex;
+    position: absolute;
+    width: 300px;
+    right: 0;
+    bottom: -20px;
+  }
+  
+  h1{
     font-size: 18px;
   }
 }
